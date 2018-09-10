@@ -1,0 +1,21 @@
+<launch>
+  <!-- Map path -->
+  <arg name="map_file" default="$(find navigation_dual)/maps/map.yaml"/>
+
+  <!-- Turtlebot3 bringup-->
+  <include file="$(find bringup_dual)/launch/robot.launch"/>
+
+  <!-- Map server -->
+  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
+
+  <!-- AMCL -->
+  <include file="$(find navigation_dual)/launch/amcl.launch"/>
+
+  <!-- Move_base -->
+  <include file="$(find navigation_dual)/launch/move_base.launch"/>
+
+  <!-- run RViz node (visualization) -->
+  <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(find navigation_dual)/rviz/navigation.rviz">
+  </node>
+
+</launch>
