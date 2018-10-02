@@ -10,7 +10,7 @@ int main(int argc, char **argv)
   ros::Publisher cmd_pub=nh.advertise<bringup_dual::commendMsg>("/ns1/cmd_msg",100); //100 que size//
 
   ros::Rate loop_rate(50); // Setting 50 Hz //
-
+/*
   int N=1000;
 
   double xd[N];
@@ -27,11 +27,11 @@ int main(int argc, char **argv)
 
   }
   int j=0;
-
+*/
 
   while(ros::ok())
   {
-
+/*
     bringup_dual::commendMsg cmd_msg;
 
     cmd_msg.xd = xd[j];
@@ -40,13 +40,13 @@ int main(int argc, char **argv)
 
 
     cmd_pub.publish(cmd_msg);
-
+*/
 
     ROS_INFO("Pub Msg : %lf %lf %lf",cmd_msg.xd,cmd_msg.yd,cmd_msg.phid);
 
     loop_rate.sleep();
 
-
+/*
     j++;
 
     if(j==N)
@@ -54,7 +54,7 @@ int main(int argc, char **argv)
 
         j=0;
     }
-
+*/
 
   }
 
