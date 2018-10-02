@@ -261,9 +261,9 @@ int main(int argc, char **argv)
 
 
     input_msg.omega1 = w1 * gear_ratio;
-    input_msg.omega2 = w2 * gear_ratio;
+    input_msg.omega2 = -w2 * gear_ratio;
     input_msg.omega3 = w3 * gear_ratio;
-    input_msg.omega4 = w4 * gear_ratio;
+    input_msg.omega4 = -w4 * gear_ratio;
 /*
     input_msg.vel1 = w1;
     input_msg.vel2 = w2;
