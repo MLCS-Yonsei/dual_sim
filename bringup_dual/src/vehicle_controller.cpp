@@ -269,7 +269,6 @@ int main(int argc, char **argv)
     input_msg.vel2 = w2;
     input_msg.vel3 = w3;
     input_msg.vel4 = w4;
-
 */
     ctrl_pub.publish(cmd_vel);
     publ_input.publish(input_msg);
@@ -301,4 +300,3 @@ int main(int argc, char **argv)
   return 0;
 
 }
-

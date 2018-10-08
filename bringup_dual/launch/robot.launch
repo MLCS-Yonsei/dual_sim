@@ -43,4 +43,13 @@
     <param name="/use_sim_time" value="$(arg use_sim_time)"/>
   </node>
 
+  <!-- Rospy -->
+  <node pkg="bringup_dual" type="script.py" name="script">
+  </node>
+
+  <!-- Controller -->
+  <group ns="controller_group">
+    <node pkg="bringup_dual" type="vehicle_controller" name="control"/>
+  </group>
+
 </launch>
