@@ -2,9 +2,6 @@
   <!-- Map path -->
   <arg name="map_file" default="$(find navigation_dual)/maps/map.yaml"/>
 
-  <!-- Turtlebot3 bringup-->
-  <include file="$(find bringup_dual)/launch/robot.launch"/>
-
   <!-- Map server -->
   <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
 
@@ -13,6 +10,9 @@
 
   <!-- Move_base -->
   <include file="$(find navigation_dual)/launch/move_base.launch"/>
+
+  <!-- cmd_publisher -->
+  <node pkg="navigation_dual" type="cmd_publisher.py" name="cmd_publisher"/>
 
   <!-- run RViz node (visualization) -->
   <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(find navigation_dual)/rviz/navigation.rviz">
