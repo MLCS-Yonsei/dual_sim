@@ -51,8 +51,5 @@
   <!-- run RViz node (visualization) -->
   <node pkg="rviz" type="rviz" name="rviz" args="-d $(find slam_dual)/rviz/slam.rviz">
   </node>
-
-  <!-- python -->
-  <node pkg="bringup_dual" type="script.py" name="script"/>
     
 </launch>

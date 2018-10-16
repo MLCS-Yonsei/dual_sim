@@ -6,7 +6,7 @@
        xmlns:xacro="http://ros.org/wiki/xacro">
     
     <gazebo>
-        <plugin name="dummy_drive" filename="libgazebo_ros_planar_move.so">
+        <plugin name="dummy_drive" filename="libgazebo_ros_force_based_move.so">
             <legacyMode>false</legacyMode>
             <alwaysOn>true</alwaysOn>
             <updateRate>100</updateRate>

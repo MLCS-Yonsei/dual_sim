@@ -9,17 +9,20 @@ cd ..
 catkin_make
 ```
 
+## Dependent pkg
+```bash
+cd catkin_ws/src
+git clone https://github.com/tu-darmstadt-ros-pkg/hector_gazebo
+cd ..
+catkin_make
+```
+
 ## Usage
 
 ### Running an environment
 Bringup
 ```bash
 roslaunch bringup_dual robot.launch
-```
-
-Movement
-```bash
-roslaunch bringup_dual control.launch
 ```
 
 Slam
