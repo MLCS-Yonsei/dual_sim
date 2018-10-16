@@ -40,4 +40,8 @@
 	<!-- Move_base -->
   	<!-- <include file="$(find navigation_dual)/launch/move_base.launch"/> -->
 
+	  <!-- Run RViz node (visualization) -->
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find slam_dual)/rviz/slam.rviz">
+  </node>
+  
 </launch>
