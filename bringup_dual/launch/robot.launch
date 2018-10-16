@@ -48,7 +48,7 @@
     <node pkg="bringup_dual" type="vehicle_controller" name="control"/>
   </group>
 
-  <!-- run RViz node (visualization) -->
+  <!-- Run RViz node (visualization) -->
   <node pkg="rviz" type="rviz" name="rviz" args="-d $(find slam_dual)/rviz/slam.rviz">
   </node>
     
