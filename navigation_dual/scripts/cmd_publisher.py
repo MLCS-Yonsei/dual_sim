@@ -1,40 +1,32 @@
 #!/usr/bin/python
 import rospy
 from nav_msgs.msg import Path
+from tf.transformations import euler_from_quaternion
 #from geometry_msgs.msg import Point, Twist
 from bringup_dual.msg import commendMsg
-from numpy import arctan2
 
 class cmd_publisher:
 
     def __init__(self):
-        self.nodename='cmd_publisher'
+        rospy.init_node('cmd_publisher', anonymous=True)
+        self.path_topic = rospy.get_param('~path_topic', '/move_base/TrajectoryPlannerROS/global_plan')
+        self.pub = rospy.Publisher('/ns1/cmd_msg', commendMsg, queue_size=100)
+        self.sub = rospy.Subscriber(self.path_topic, Path, self.pathCallback)
+        self.pose_cmd = commendMsg()
 
-    def pathCallback(self,data):
-        self.path=[]
-        for pose in data.poses:
-            self.path.append(list([pose.pose.position.x,pose.pose.position.y]))
+    def pathCallback(self, data):
+        pose = data.poses[-1].pose
+        self.pose_cmd.xd = pose.position.x
+        self.pose_cmd.yd = pose.position.y
+        self.pose_cmd.phid = euler_from_quaternion([
+            pose.orientation.x,
+            pose.orientation.y,
+            pose.orientation.z,
+            pose.orientation.w])[2]
+        self.pub.publish(self.pose_cmd)
 
     def node(self):
-        path_topic = rospy.get_param('~path_topic', '/move_base/TrajectoryPlannerROS/global_plan')
-        pub=rospy.Publisher('/ns1/cmd_msg', commendMsg, queue_size=100)
-        rospy.Subscriber(path_topic, Path, self.pathCallback)
-        rospy.init_node(self.nodename, anonymous=True)
-        pose_cmd=commendMsg()
-        #pose_cmd.xd
-        #pose_cmd.yd
-        #pose_cmd.phid
-
-        while not rospy.is_shutdown():
-            if len(self.path)<21:
-                [pose_cmd.xd,pose_cmd.yd]=self.path[20]
-                if len(self.path)>1:
-                    pose_cmd.phid=arctan2(self.path[20][1]-self.path[19][1],self.path[20][0]-self.path[19][0])
-                else:
-                    pass
-            else:
-                [pose_cmd.xd,pose_cmd.yd,pose_cmd.phid]=[0.0,0.0,0.0]
-            pub.publish(pose_cmd)
+        rospy.spin()
 
 
 if __name__=='__main__':

@@ -10,7 +10,26 @@
     <xacro:include filename="$(find description_dual)/urdf/materials.urdf.xacro"/>
     
     <!-- Base footprint -->
-    <link name="base_footprint"/>
+    <link name="base_footprint">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="0.1" />
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="0.0" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="material_red"/>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
     <joint name="base_joint" type="fixed">
         <parent link="base_footprint"/>
         <child link="base_link"/>

@@ -8,9 +8,9 @@ def node():
     q=commendMsg()
     pub = rospy.Publisher('/ns1/cmd_msg', commendMsg, queue_size=100)
     rospy.init_node('script', anonymous=True)
-    q.xd=10
-    q.yd=10
-    q.phid=1
+    q.xd=0
+    q.yd=0
+    q.phid=0
 
     while not rospy.is_shutdown():
         pub.publish(q)
