@@ -272,8 +272,8 @@
         <camera name="kinect_depth_camera">
             <horizontal_fov>1.3962634</horizontal_fov>
             <image>
-            <width>720</width>
-            <height>480</height>
+            <width>160</width>
+            <height>120</height>
             <format>R8G8B8</format>
             </image>
             <clip>
@@ -310,8 +310,8 @@
         <camera name="kinect_rgb_camera">
             <horizontal_fov>1.3962634</horizontal_fov>
             <image>
-            <width>720</width>
-            <height>480</height>
+            <width>160</width>
+            <height>120</height>
             <format>R8G8B8</format>
             </image>
             <clip>
