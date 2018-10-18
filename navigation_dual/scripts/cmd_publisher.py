@@ -15,8 +15,8 @@ class cmd_publisher:
         self.pose_cmd = commendMsg()
 
     def pathCallback(self, data):
-        if len(data.poses)>10:
-            pose = data.poses[10].pose
+        if len(data.poses)>20:
+            pose = data.poses[20].pose
         else:
             pose = data.poses[-1].pose
         self.pose_cmd.xd = pose.position.x
@@ -37,4 +37,3 @@ if __name__=='__main__':
     try:
         cmd_pub.node()
     except rospy.ROSInterruptException: pass
-

@@ -40,5 +40,6 @@
 # echo "alias fd='sudo find / -name'" >>~/.bashrc
 
 #MLCS_sim_dependency pkg#
+sudo apt-get install ros-kinetic-teb-local-planner
 git clone https://github.com/MLCS-Yonsei/hector_gazebo_plugins
 cd ~/catkin_ws && catkin_make

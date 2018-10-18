@@ -48,13 +48,14 @@
 
   <!-- Move_base -->
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
-    <rosparam file="$(find slam_navi)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
-    <rosparam file="$(find slam_navi)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
-    <rosparam file="$(find slam_navi)/param/local_costmap_params.yaml" command="load" />
-    <rosparam file="$(find slam_navi)/param/global_costmap_params.yaml" command="load" />
-    <rosparam file="$(find slam_navi)/param/move_base_params.yaml" command="load" />
-    <rosparam file="$(find slam_navi)/param/base_local_planner_params.yaml" command="load" />
-    <remap from="odom" to="odom"/>
+    <rosparam file="$(find navigation_dual)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find navigation_dual)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find navigation_dual)/param/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find navigation_dual)/param/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find navigation_dual)/param/move_base_params.yaml" command="load" />
+	  <rosparam file="$(find navigation_dual)/param/base_local_planner_params.yaml" command="load" />
+	  <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
+	  <param name="controller_frequency" value="10.0" />
   </node>
 
   <!-- AMCL -->
