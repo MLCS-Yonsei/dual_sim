@@ -26,19 +26,18 @@
 # wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
 # sudo apt-get update -y
 # sudo apt-get upgrade -y
-# sudo apt-get install ros-kinetic-desktop-full -y
 # sudo apt-get install libignition-math3 -y
 # sudo apt-get install libgazebo8 -y
 # sudo apt-get install gazebo8 -y
 
 #Alias#
-# alias eb='gedit ~/.bashrc'
-# alias sb='source ~/.bashrc && source ~/catkin_ws/devel/setup.bash'
-# alias cm='cd ~/catkin_ws && catkin_make'
-# alias usb='ls -l /dev |grep ttyUSB'
-# alias gpu='nvidia-smi -l 1'
-# alias kg='killall -9 roscore roslaunch rosmaster gzserver nodelet gzclient rviz'
-# alias fd='sudo find / -name'
+# echo "alias eb='gedit ~/.bashrc'" >>~/.bashrc
+# echo "alias sb='source ~/.bashrc && source ~/catkin_ws/devel/setup.bash'" >>~/.bashrc
+# echo "alias cm='cd ~/catkin_ws && catkin_make'" >>~/.bashrc
+# echo "alias usb='ls -l /dev |grep ttyUSB'" >>~/.bashrc
+# echo "alias gpu='nvidia-smi -l 1'" >>~/.bashrc
+# echo "alias kg='killall -9 roscore roslaunch rosmaster gzserver nodelet gzclient rviz'" >>~/.bashrc
+# echo "alias fd='sudo find / -name'" >>~/.bashrc
 
 #MLCS_sim_dependency pkg#
 git clone https://github.com/MLCS-Yonsei/hector_gazebo_plugins

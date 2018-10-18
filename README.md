@@ -2,6 +2,7 @@
 Dual_arm simlator (SLAM &amp; Navi)
 
 ## Installation
+One-line installation
 ```bash
 cd catkin_ws/src
 git clone https://github.com/MLCS-Yonsei/dual_sim.git
