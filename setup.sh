@@ -41,4 +41,5 @@
 # alias fd='sudo find / -name'
 
 #MLCS_sim_dependency pkg#
-git clone https://github.com/tu-darmstadt-ros-pkg/hector_gazebo
+git clone https://github.com/MLCS-Yonsei/hector_gazebo_plugins
+cd ~/catkin_ws && catkin_make

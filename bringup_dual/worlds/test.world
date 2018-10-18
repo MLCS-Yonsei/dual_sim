@@ -109,8 +109,8 @@
           </geometry>
           <material>
             <script>
-              <uri>model://env_floor/blue_floor/materials/scripts</uri>
-              <uri>model://env_floor/blue_floor/materials/textures</uri>
+              <uri>file://env_floor/blue_floor/materials/scripts</uri>
+              <uri>file://env_floor/blue_floor/materials/textures</uri>
               <name>vrc/blue_floor</name>
             </script>
             <ambient>1 0.764706 0.305882 1</ambient>
@@ -205,8 +205,8 @@
           </geometry>
           <material>
             <script>
-              <uri>model://env_floor/darkgrey_floor/materials/scripts</uri>
-              <uri>model://env_floor/darkgrey_floor/materials/textures</uri>
+              <uri>file://env_floor/darkgrey_floor/materials/scripts</uri>
+              <uri>file://env_floor/darkgrey_floor/materials/textures</uri>
               <name>vrc/darkgrey_floor</name>
             </script>
             <ambient>1 0.764706 0.305882 1</ambient>
@@ -301,8 +301,8 @@
           </geometry>
           <material>
             <script>
-              <uri>model://env_floor/darkred_floor/materials/scripts</uri>
-              <uri>model://env_floor/darkred_floor/materials/textures</uri>
+              <uri>file://env_floor/darkred_floor/materials/scripts</uri>
+              <uri>file://env_floor/darkred_floor/materials/textures</uri>
               <name>vrc/darkred_floor</name>
             </script>
             <ambient>1 0.764706 0.305882 1</ambient>
@@ -397,8 +397,8 @@
           </geometry>
           <material>
             <script>
-              <uri>model://env_floor/green_floor/materials/scripts</uri>
-              <uri>model://env_floor/green_floor/materials/textures</uri>
+              <uri>file://env_floor/green_floor/materials/scripts</uri>
+              <uri>file://env_floor/green_floor/materials/textures</uri>
               <name>vrc/green_floor</name>
             </script>
             <ambient>1 0.764706 0.305882 1</ambient>
@@ -493,8 +493,8 @@
           </geometry>
           <material>
             <script>
-              <uri>model://env_floor/lightgrey_floor/materials/scripts</uri>
-              <uri>model://env_floor/lightgrey_floor/materials/textures</uri>
+              <uri>file://env_floor/lightgrey_floor/materials/scripts</uri>
+              <uri>file://env_floor/lightgrey_floor/materials/textures</uri>
               <name>vrc/lightgrey_floor</name>
             </script>
             <ambient>1 0.764706 0.305882 1</ambient>
@@ -589,8 +589,8 @@
           </geometry>
           <material>
             <script>
-              <uri>model://env_floor/urethane_floor/materials/scripts</uri>
-              <uri>model://env_floor/urethane_floor/materials/textures</uri>
+              <uri>file://env_floor/urethane_floor/materials/scripts</uri>
+              <uri>file://env_floor/urethane_floor/materials/textures</uri>
               <name>vrc/urethane_floor</name>
             </script>
             <ambient>1 0.764706 0.305882 1</ambient>
@@ -661,7 +661,7 @@
     <model name='brownbrick_wall'>
       <static>1</static>
       <link name='link_1'>
-        <pose frame=''>20 0 1.4 0 -0 0</pose>
+        <pose frame=''>20 0 5 0 -0 0</pose>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
         <inertial>
@@ -680,13 +680,13 @@
           <cast_shadows>0</cast_shadows>
           <geometry>
             <box>
-              <size>40 0.2 2.8</size>
+              <size>40 0.2 10</size>
             </box>
           </geometry>
           <material>
             <script>
-              <uri>model://env_wall/brownbrick_wall/materials/scripts</uri>
-              <uri>model://env_wall/brownbrick_wall/materials/textures</uri>
+              <uri>file://env_wall/brownbrick_wall/materials/scripts</uri>
+              <uri>file://env_wall/brownbrick_wall/materials/textures</uri>
               <name>vrc/brownbrick_wall</name>
             </script>
             <ambient>1 0.764706 0.305882 1</ambient>
@@ -701,7 +701,7 @@
           <max_contacts>10</max_contacts>
           <geometry>
             <box>
-              <size>40 0.2 2.8</size>
+              <size>40 0.2 10</size>
             </box>
           </geometry>
           <surface>
@@ -753,7 +753,7 @@
         <enable_wind>0</enable_wind>
       </link>
       <link name='link_2'>
-        <pose frame=''>20 30 1.4 0 -0 0</pose>
+        <pose frame=''>20 30 5 0 -0 0</pose>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
         <inertial>
@@ -772,13 +772,13 @@
           <cast_shadows>0</cast_shadows>
           <geometry>
             <box>
-              <size>40 0.2 2.8</size>
+              <size>40 0.2 10</size>
             </box>
           </geometry>
           <material>
             <script>
-              <uri>model://env_wall/brownbrick_wall/materials/scripts</uri>
-              <uri>model://env_wall/brownbrick_wall/materials/textures</uri>
+              <uri>file://env_wall/brownbrick_wall/materials/scripts</uri>
+              <uri>file://env_wall/brownbrick_wall/materials/textures</uri>
               <name>vrc/brownbrick_wall</name>
             </script>
             <ambient>1 0.764706 0.305882 1</ambient>
@@ -793,7 +793,7 @@
           <max_contacts>10</max_contacts>
           <geometry>
             <box>
-              <size>40 0.2 2.8</size>
+              <size>40 0.2 10</size>
             </box>
           </geometry>
           <surface>
@@ -845,7 +845,7 @@
         <enable_wind>0</enable_wind>
       </link>
       <link name='link_3'>
-        <pose frame=''>0 15 1.4 0 -0 1.57</pose>
+        <pose frame=''>0 15 5 0 -0 1.57</pose>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
         <inertial>
@@ -864,13 +864,13 @@
           <cast_shadows>0</cast_shadows>
           <geometry>
             <box>
-              <size>30 0.2 2.8</size>
+              <size>30 0.2 10</size>
             </box>
           </geometry>
           <material>
             <script>
-              <uri>model://env_wall/brownbrick_wall/materials/scripts</uri>
-              <uri>model://env_wall/brownbrick_wall/materials/textures</uri>
+              <uri>file://env_wall/brownbrick_wall/materials/scripts</uri>
+              <uri>file://env_wall/brownbrick_wall/materials/textures</uri>
               <name>vrc/brownbrick_wall</name>
             </script>
             <ambient>1 0.764706 0.305882 1</ambient>
@@ -885,7 +885,7 @@
           <max_contacts>10</max_contacts>
           <geometry>
             <box>
-              <size>30 0.2 2.8</size>
+              <size>30 0.2 10</size>
             </box>
           </geometry>
           <surface>
@@ -937,7 +937,7 @@
         <enable_wind>0</enable_wind>
       </link>
       <link name='link_4'>
-        <pose frame=''>40 15 1.4 0 -0 1.57</pose>
+        <pose frame=''>40 15 5 0 -0 1.57</pose>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
         <inertial>
@@ -956,13 +956,13 @@
           <cast_shadows>0</cast_shadows>
           <geometry>
             <box>
-              <size>30 0.2 2.8</size>
+              <size>30 0.2 10</size>
             </box>
           </geometry>
           <material>
             <script>
-              <uri>model://env_wall/brownbrick_wall/materials/scripts</uri>
-              <uri>model://env_wall/brownbrick_wall/materials/textures</uri>
+              <uri>file://env_wall/brownbrick_wall/materials/scripts</uri>
+              <uri>file://env_wall/brownbrick_wall/materials/textures</uri>
               <name>vrc/brownbrick_wall</name>
             </script>
             <ambient>1 0.764706 0.305882 1</ambient>
@@ -977,7 +977,7 @@
           <max_contacts>10</max_contacts>
           <geometry>
             <box>
-              <size>30 0.2 2.8</size>
+              <size>30 0.2 10</size>
             </box>
           </geometry>
           <surface>
@@ -1033,7 +1033,7 @@
     <model name='concrete_wall'>
       <static>1</static>
       <link name='link_1'>
-        <pose frame=''>20 0 1.4 0 -0 0</pose>
+        <pose frame=''>20 0 5 0 -0 0</pose>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
         <inertial>
@@ -1052,13 +1052,13 @@
           <cast_shadows>0</cast_shadows>
           <geometry>
             <box>
-              <size>40 0.2 2.8</size>
+              <size>40 0.2 10</size>
             </box>
           </geometry>
           <material>
             <script>
-              <uri>model://env_wall/concrete_wall/materials/scripts</uri>
-              <uri>model://env_wall/concrete_wall/materials/textures</uri>
+              <uri>file://env_wall/concrete_wall/materials/scripts</uri>
+              <uri>file://env_wall/concrete_wall/materials/textures</uri>
               <name>vrc/concrete_wall</name>
             </script>
             <ambient>1 0.764706 0.305882 1</ambient>
@@ -1073,7 +1073,7 @@
           <max_contacts>10</max_contacts>
           <geometry>
             <box>
-              <size>40 0.2 2.8</size>
+              <size>40 0.2 10</size>
             </box>
           </geometry>
           <surface>
@@ -1125,7 +1125,7 @@
         <enable_wind>0</enable_wind>
       </link>
       <link name='link_2'>
-        <pose frame=''>20 30 1.4 0 -0 0</pose>
+        <pose frame=''>20 30 5 0 -0 0</pose>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
         <inertial>
@@ -1144,13 +1144,13 @@
           <cast_shadows>0</cast_shadows>
           <geometry>
             <box>
-              <size>40 0.2 2.8</size>
+              <size>40 0.2 10</size>
             </box>
           </geometry>
           <material>
             <script>
-              <uri>model://env_wall/concrete_wall/materials/scripts</uri>
-              <uri>model://env_wall/concrete_wall/materials/textures</uri>
+              <uri>file://env_wall/concrete_wall/materials/scripts</uri>
+              <uri>file://env_wall/concrete_wall/materials/textures</uri>
               <name>vrc/concrete_wall</name>
             </script>
             <ambient>1 0.764706 0.305882 1</ambient>
@@ -1165,7 +1165,7 @@
           <max_contacts>10</max_contacts>
           <geometry>
             <box>
-              <size>40 0.2 2.8</size>
+              <size>40 0.2 10</size>
             </box>
           </geometry>
           <surface>
@@ -1217,7 +1217,7 @@
         <enable_wind>0</enable_wind>
       </link>
       <link name='link_3'>
-        <pose frame=''>0 15 1.4 0 -0 1.57</pose>
+        <pose frame=''>0 15 5 0 -0 1.57</pose>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
         <inertial>
@@ -1236,13 +1236,13 @@
           <cast_shadows>0</cast_shadows>
           <geometry>
             <box>
-              <size>30 0.2 2.8</size>
+              <size>30 0.2 10</size>
             </box>
           </geometry>
           <material>
             <script>
-              <uri>model://env_wall/concrete_wall/materials/scripts</uri>
-              <uri>model://env_wall/concrete_wall/materials/textures</uri>
+              <uri>file://env_wall/concrete_wall/materials/scripts</uri>
+              <uri>file://env_wall/concrete_wall/materials/textures</uri>
               <name>vrc/concrete_wall</name>
             </script>
             <ambient>1 0.764706 0.305882 1</ambient>
@@ -1257,7 +1257,7 @@
           <max_contacts>10</max_contacts>
           <geometry>
             <box>
-              <size>30 0.2 2.8</size>
+              <size>30 0.2 10</size>
             </box>
           </geometry>
           <surface>
@@ -1309,7 +1309,7 @@
         <enable_wind>0</enable_wind>
       </link>
       <link name='link_4'>
-        <pose frame=''>40 15 1.4 0 -0 1.57</pose>
+        <pose frame=''>40 15 5 0 -0 1.57</pose>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
         <inertial>
@@ -1328,13 +1328,13 @@
           <cast_shadows>0</cast_shadows>
           <geometry>
             <box>
-              <size>30 0.2 2.8</size>
+              <size>30 0.2 10</size>
             </box>
           </geometry>
           <material>
             <script>
-              <uri>model://env_wall/concrete_wall/materials/scripts</uri>
-              <uri>model://env_wall/concrete_wall/materials/textures</uri>
+              <uri>file://env_wall/concrete_wall/materials/scripts</uri>
+              <uri>file://env_wall/concrete_wall/materials/textures</uri>
               <name>vrc/concrete_wall</name>
             </script>
             <ambient>1 0.764706 0.305882 1</ambient>
@@ -1349,7 +1349,7 @@
           <max_contacts>10</max_contacts>
           <geometry>
             <box>
-              <size>30 0.2 2.8</size>
+              <size>30 0.2 10</size>
             </box>
           </geometry>
           <surface>
@@ -1405,7 +1405,7 @@
     <model name='grey_wall'>
       <static>1</static>
       <link name='link_1'>
-        <pose frame=''>20 0 1.4 0 -0 0</pose>
+        <pose frame=''>20 0 5 0 -0 0</pose>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
         <inertial>
@@ -1424,13 +1424,13 @@
           <cast_shadows>0</cast_shadows>
           <geometry>
             <box>
-              <size>40 0.2 2.8</size>
+              <size>40 0.2 10</size>
             </box>
           </geometry>
           <material>
             <script>
-              <uri>model://env_wall/grey_wall/materials/scripts</uri>
-              <uri>model://env_wall/grey_wall/materials/textures</uri>
+              <uri>file://env_wall/grey_wall/materials/scripts</uri>
+              <uri>file://env_wall/grey_wall/materials/textures</uri>
               <name>vrc/grey_wall</name>
             </script>
             <ambient>1 0.764706 0.305882 1</ambient>
@@ -1445,7 +1445,7 @@
           <max_contacts>10</max_contacts>
           <geometry>
             <box>
-              <size>40 0.2 2.8</size>
+              <size>40 0.2 10</size>
             </box>
           </geometry>
           <surface>
@@ -1497,7 +1497,7 @@
         <enable_wind>0</enable_wind>
       </link>
       <link name='link_2'>
-        <pose frame=''>20 30 1.4 0 -0 0</pose>
+        <pose frame=''>20 30 5 0 -0 0</pose>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
         <inertial>
@@ -1516,13 +1516,13 @@
           <cast_shadows>0</cast_shadows>
           <geometry>
             <box>
-              <size>40 0.2 2.8</size>
+              <size>40 0.2 10</size>
             </box>
           </geometry>
           <material>
             <script>
-              <uri>model://env_wall/grey_wall/materials/scripts</uri>
-              <uri>model://env_wall/grey_wall/materials/textures</uri>
+              <uri>file://env_wall/grey_wall/materials/scripts</uri>
+              <uri>file://env_wall/grey_wall/materials/textures</uri>
               <name>vrc/grey_wall</name>
             </script>
             <ambient>1 0.764706 0.305882 1</ambient>
@@ -1537,7 +1537,7 @@
           <max_contacts>10</max_contacts>
           <geometry>
             <box>
-              <size>40 0.2 2.8</size>
+              <size>40 0.2 10</size>
             </box>
           </geometry>
           <surface>
@@ -1589,7 +1589,7 @@
         <enable_wind>0</enable_wind>
       </link>
       <link name='link_3'>
-        <pose frame=''>0 15 1.4 0 -0 1.57</pose>
+        <pose frame=''>0 15 5 0 -0 1.57</pose>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
         <inertial>
@@ -1608,13 +1608,13 @@
           <cast_shadows>0</cast_shadows>
           <geometry>
             <box>
-              <size>30 0.2 2.8</size>
+              <size>30 0.2 10</size>
             </box>
           </geometry>
           <material>
             <script>
-              <uri>model://env_wall/grey_wall/materials/scripts</uri>
-              <uri>model://env_wall/grey_wall/materials/textures</uri>
+              <uri>file://env_wall/grey_wall/materials/scripts</uri>
+              <uri>file://env_wall/grey_wall/materials/textures</uri>
               <name>vrc/grey_wall</name>
             </script>
             <ambient>1 0.764706 0.305882 1</ambient>
@@ -1629,7 +1629,7 @@
           <max_contacts>10</max_contacts>
           <geometry>
             <box>
-              <size>30 0.2 2.8</size>
+              <size>30 0.2 10</size>
             </box>
           </geometry>
           <surface>
@@ -1681,7 +1681,7 @@
         <enable_wind>0</enable_wind>
       </link>
       <link name='link_4'>
-        <pose frame=''>40 15 1.4 0 -0 1.57</pose>
+        <pose frame=''>40 15 5 0 -0 1.57</pose>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
         <inertial>
@@ -1700,13 +1700,13 @@
           <cast_shadows>0</cast_shadows>
           <geometry>
             <box>
-              <size>30 0.2 2.8</size>
+              <size>30 0.2 10</size>
             </box>
           </geometry>
           <material>
             <script>
-              <uri>model://env_wall/grey_wall/materials/scripts</uri>
-              <uri>model://env_wall/grey_wall/materials/textures</uri>
+              <uri>file://env_wall/grey_wall/materials/scripts</uri>
+              <uri>file://env_wall/grey_wall/materials/textures</uri>
               <name>vrc/grey_wall</name>
             </script>
             <ambient>1 0.764706 0.305882 1</ambient>
@@ -1721,7 +1721,7 @@
           <max_contacts>10</max_contacts>
           <geometry>
             <box>
-              <size>30 0.2 2.8</size>
+              <size>30 0.2 10</size>
             </box>
           </geometry>
           <surface>
@@ -1777,7 +1777,7 @@
     <model name='oldbrick_wall'>
       <static>1</static>
       <link name='link_1'>
-        <pose frame=''>20 0 1.4 0 -0 0</pose>
+        <pose frame=''>20 0 5 0 -0 0</pose>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
         <inertial>
@@ -1796,13 +1796,13 @@
           <cast_shadows>0</cast_shadows>
           <geometry>
             <box>
-              <size>40 0.2 2.8</size>
+              <size>40 0.2 10</size>
             </box>
           </geometry>
           <material>
             <script>
-              <uri>model://env_wall/oldbrick_wall/materials/scripts</uri>
-              <uri>model://env_wall/oldbrick_wall/materials/textures</uri>
+              <uri>file://env_wall/oldbrick_wall/materials/scripts</uri>
+              <uri>file://env_wall/oldbrick_wall/materials/textures</uri>
               <name>vrc/oldbrick_wall</name>
             </script>
             <ambient>1 0.764706 0.305882 1</ambient>
@@ -1817,7 +1817,7 @@
           <max_contacts>10</max_contacts>
           <geometry>
             <box>
-              <size>40 0.2 2.8</size>
+              <size>40 0.2 10</size>
             </box>
           </geometry>
           <surface>
@@ -1869,7 +1869,7 @@
         <enable_wind>0</enable_wind>
       </link>
       <link name='link_2'>
-        <pose frame=''>20 30 1.4 0 -0 0</pose>
+        <pose frame=''>20 30 5 0 -0 0</pose>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
         <inertial>
@@ -1888,13 +1888,13 @@
           <cast_shadows>0</cast_shadows>
           <geometry>
             <box>
-              <size>40 0.2 2.8</size>
+              <size>40 0.2 10</size>
             </box>
           </geometry>
           <material>
             <script>
-              <uri>model://env_wall/oldbrick_wall/materials/scripts</uri>
-              <uri>model://env_wall/oldbrick_wall/materials/textures</uri>
+              <uri>file://env_wall/oldbrick_wall/materials/scripts</uri>
+              <uri>file://env_wall/oldbrick_wall/materials/textures</uri>
               <name>vrc/oldbrick_wall</name>
             </script>
             <ambient>1 0.764706 0.305882 1</ambient>
@@ -1909,7 +1909,7 @@
           <max_contacts>10</max_contacts>
           <geometry>
             <box>
-              <size>40 0.2 2.8</size>
+              <size>40 0.2 10</size>
             </box>
           </geometry>
           <surface>
@@ -1961,7 +1961,7 @@
         <enable_wind>0</enable_wind>
       </link>
       <link name='link_3'>
-        <pose frame=''>0 15 1.4 0 -0 1.57</pose>
+        <pose frame=''>0 15 5 0 -0 1.57</pose>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
         <inertial>
@@ -1980,13 +1980,13 @@
           <cast_shadows>0</cast_shadows>
           <geometry>
             <box>
-              <size>30 0.2 2.8</size>
+              <size>30 0.2 10</size>
             </box>
           </geometry>
           <material>
             <script>
-              <uri>model://env_wall/oldbrick_wall/materials/scripts</uri>
-              <uri>model://env_wall/oldbrick_wall/materials/textures</uri>
+              <uri>file://env_wall/oldbrick_wall/materials/scripts</uri>
+              <uri>file://env_wall/oldbrick_wall/materials/textures</uri>
               <name>vrc/oldbrick_wall</name>
             </script>
             <ambient>1 0.764706 0.305882 1</ambient>
@@ -2001,7 +2001,7 @@
           <max_contacts>10</max_contacts>
           <geometry>
             <box>
-              <size>30 0.2 2.8</size>
+              <size>30 0.2 10</size>
             </box>
           </geometry>
           <surface>
@@ -2053,7 +2053,7 @@
         <enable_wind>0</enable_wind>
       </link>
       <link name='link_4'>
-        <pose frame=''>40 15 1.4 0 -0 1.57</pose>
+        <pose frame=''>40 15 5 0 -0 1.57</pose>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
         <inertial>
@@ -2072,13 +2072,13 @@
           <cast_shadows>0</cast_shadows>
           <geometry>
             <box>
-              <size>30 0.2 2.8</size>
+              <size>30 0.2 10</size>
             </box>
           </geometry>
           <material>
             <script>
-              <uri>model://env_wall/oldbrick_wall/materials/scripts</uri>
-              <uri>model://env_wall/oldbrick_wall/materials/textures</uri>
+              <uri>file://env_wall/oldbrick_wall/materials/scripts</uri>
+              <uri>file://env_wall/oldbrick_wall/materials/textures</uri>
               <name>vrc/oldbrick_wall</name>
             </script>
             <ambient>1 0.764706 0.305882 1</ambient>
@@ -2093,7 +2093,7 @@
           <max_contacts>10</max_contacts>
           <geometry>
             <box>
-              <size>30 0.2 2.8</size>
+              <size>30 0.2 10</size>
             </box>
           </geometry>
           <surface>
@@ -2149,7 +2149,7 @@
     <model name='redbrick_wall'>
       <static>1</static>
       <link name='link_1'>
-        <pose frame=''>20 0 1.4 0 -0 0</pose>
+        <pose frame=''>20 0 5 0 -0 0</pose>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
         <inertial>
@@ -2168,13 +2168,13 @@
           <cast_shadows>0</cast_shadows>
           <geometry>
             <box>
-              <size>40 0.2 2.8</size>
+              <size>40 0.2 10</size>
             </box>
           </geometry>
           <material>
             <script>
-              <uri>model://env_wall/redbrick_wall/materials/scripts</uri>
-              <uri>model://env_wall/redbrick_wall/materials/textures</uri>
+              <uri>file://env_wall/redbrick_wall/materials/scripts</uri>
+              <uri>file://env_wall/redbrick_wall/materials/textures</uri>
               <name>vrc/redbrick_wall</name>
             </script>
             <ambient>1 0.764706 0.305882 1</ambient>
@@ -2189,7 +2189,7 @@
           <max_contacts>10</max_contacts>
           <geometry>
             <box>
-              <size>40 0.2 2.8</size>
+              <size>40 0.2 10</size>
             </box>
           </geometry>
           <surface>
@@ -2241,7 +2241,7 @@
         <enable_wind>0</enable_wind>
       </link>
       <link name='link_2'>
-        <pose frame=''>20 30 1.4 0 -0 0</pose>
+        <pose frame=''>20 30 5 0 -0 0</pose>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
         <inertial>
@@ -2260,13 +2260,13 @@
           <cast_shadows>0</cast_shadows>
           <geometry>
             <box>
-              <size>40 0.2 2.8</size>
+              <size>40 0.2 10</size>
             </box>
           </geometry>
           <material>
             <script>
-              <uri>model://env_wall/redbrick_wall/materials/scripts</uri>
-              <uri>model://env_wall/redbrick_wall/materials/textures</uri>
+              <uri>file://env_wall/redbrick_wall/materials/scripts</uri>
+              <uri>file://env_wall/redbrick_wall/materials/textures</uri>
               <name>vrc/redbrick_wall</name>
             </script>
             <ambient>1 0.764706 0.305882 1</ambient>
@@ -2281,7 +2281,7 @@
           <max_contacts>10</max_contacts>
           <geometry>
             <box>
-              <size>40 0.2 2.8</size>
+              <size>40 0.2 10</size>
             </box>
           </geometry>
           <surface>
@@ -2333,7 +2333,7 @@
         <enable_wind>0</enable_wind>
       </link>
       <link name='link_3'>
-        <pose frame=''>0 15 1.4 0 -0 1.57</pose>
+        <pose frame=''>0 15 5 0 -0 1.57</pose>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
         <inertial>
@@ -2352,13 +2352,13 @@
           <cast_shadows>0</cast_shadows>
           <geometry>
             <box>
-              <size>30 0.2 2.8</size>
+              <size>30 0.2 10</size>
             </box>
           </geometry>
           <material>
             <script>
-              <uri>model://env_wall/redbrick_wall/materials/scripts</uri>
-              <uri>model://env_wall/redbrick_wall/materials/textures</uri>
+              <uri>file://env_wall/redbrick_wall/materials/scripts</uri>
+              <uri>file://env_wall/redbrick_wall/materials/textures</uri>
               <name>vrc/redbrick_wall</name>
             </script>
             <ambient>1 0.764706 0.305882 1</ambient>
@@ -2373,7 +2373,7 @@
           <max_contacts>10</max_contacts>
           <geometry>
             <box>
-              <size>30 0.2 2.8</size>
+              <size>30 0.2 10</size>
             </box>
           </geometry>
           <surface>
@@ -2425,7 +2425,7 @@
         <enable_wind>0</enable_wind>
       </link>
       <link name='link_4'>
-        <pose frame=''>40 15 1.4 0 -0 1.57</pose>
+        <pose frame=''>40 15 5 0 -0 1.57</pose>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
         <inertial>
@@ -2444,13 +2444,13 @@
           <cast_shadows>0</cast_shadows>
           <geometry>
             <box>
-              <size>30 0.2 2.8</size>
+              <size>30 0.2 10</size>
             </box>
           </geometry>
           <material>
             <script>
-              <uri>model://env_wall/redbrick_wall/materials/scripts</uri>
-              <uri>model://env_wall/redbrick_wall/materials/textures</uri>
+              <uri>file://env_wall/redbrick_wall/materials/scripts</uri>
+              <uri>file://env_wall/redbrick_wall/materials/textures</uri>
               <name>vrc/redbrick_wall</name>
             </script>
             <ambient>1 0.764706 0.305882 1</ambient>
@@ -2465,7 +2465,7 @@
           <max_contacts>10</max_contacts>
           <geometry>
             <box>
-              <size>30 0.2 2.8</size>
+              <size>30 0.2 10</size>
             </box>
           </geometry>
           <surface>
@@ -3351,25 +3351,25 @@
         <pose frame=''>-50 -50 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link_1'>
-          <pose frame=''>-30 -50 1.4 0 -0 0</pose>
+          <pose frame=''>-30 -50 5 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='link_2'>
-          <pose frame=''>-30 -20 1.4 0 -0 0</pose>
+          <pose frame=''>-30 -20 5 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='link_3'>
-          <pose frame=''>-50 -35 1.4 0 -0 1.57</pose>
+          <pose frame=''>-50 -35 5 0 -0 1.57</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='link_4'>
-          <pose frame=''>-10 -35 1.4 0 -0 1.57</pose>
+          <pose frame=''>-10 -35 5 0 -0 1.57</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -3409,25 +3409,25 @@
         <pose frame=''>-50 -50 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link_1'>
-          <pose frame=''>-30 -50 1.4 0 -0 0</pose>
+          <pose frame=''>-30 -50 5 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='link_2'>
-          <pose frame=''>-30 -20 1.4 0 -0 0</pose>
+          <pose frame=''>-30 -20 5 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='link_3'>
-          <pose frame=''>-50 -35 1.4 0 -0 1.57</pose>
+          <pose frame=''>-50 -35 5 0 -0 1.57</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='link_4'>
-          <pose frame=''>-10 -35 1.4 0 -0 1.57</pose>
+          <pose frame=''>-10 -35 5 0 -0 1.57</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -3507,25 +3507,25 @@
         <pose frame=''>-50 -50 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link_1'>
-          <pose frame=''>-30 -50 1.4 0 -0 0</pose>
+          <pose frame=''>-30 -50 5 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='link_2'>
-          <pose frame=''>-30 -20 1.4 0 -0 0</pose>
+          <pose frame=''>-30 -20 5 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='link_3'>
-          <pose frame=''>-50 -35 1.4 0 -0 1.57</pose>
+          <pose frame=''>-50 -35 5 0 -0 1.57</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='link_4'>
-          <pose frame=''>-10 -35 1.4 0 -0 1.57</pose>
+          <pose frame=''>-10 -35 5 0 -0 1.57</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -3615,25 +3615,25 @@
         <pose frame=''>-50 -50 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link_1'>
-          <pose frame=''>-30 -50 1.4 0 -0 0</pose>
+          <pose frame=''>-30 -50 5 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='link_2'>
-          <pose frame=''>-30 -20 1.4 0 -0 0</pose>
+          <pose frame=''>-30 -20 5 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='link_3'>
-          <pose frame=''>-50 -35 1.4 0 -0 1.57</pose>
+          <pose frame=''>-50 -35 5 0 -0 1.57</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='link_4'>
-          <pose frame=''>-10 -35 1.4 0 -0 1.57</pose>
+          <pose frame=''>-10 -35 5 0 -0 1.57</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -3663,25 +3663,25 @@
         <pose frame=''>-50 -50 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link_1'>
-          <pose frame=''>-30 -50 1.4 0 -0 0</pose>
+          <pose frame=''>-30 -50 5 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='link_2'>
-          <pose frame=''>-30 -20 1.4 0 -0 0</pose>
+          <pose frame=''>-30 -20 5 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='link_3'>
-          <pose frame=''>-50 -35 1.4 0 -0 1.57</pose>
+          <pose frame=''>-50 -35 5 0 -0 1.57</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='link_4'>
-          <pose frame=''>-10 -35 1.4 0 -0 1.57</pose>
+          <pose frame=''>-10 -35 5 0 -0 1.57</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -11558,7 +11558,7 @@
           <pose frame=''>0 0 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/Automatic_Rotary_Packing_Machine/meshes/model.dae</uri>
+              <uri>file://env_machine/Automatic_Rotary_Packing_Machine/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -11571,7 +11571,7 @@
           <pose frame=''>0 0 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/Automatic_Rotary_Packing_Machine/meshes/model.dae</uri>
+              <uri>file://env_machine/Automatic_Rotary_Packing_Machine/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -11606,7 +11606,7 @@
           <pose frame=''>-1 -2 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/Inspection_Metal_Detector/meshes/model.dae</uri>
+              <uri>file://env_machine/Inspection_Metal_Detector/meshes/model.dae</uri>
               <scale>1.2 1.2 1.2</scale>
             </mesh>
           </geometry>
@@ -11619,7 +11619,7 @@
           <pose frame=''>-1 -2 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/Inspection_Metal_Detector/meshes/model.dae</uri>
+              <uri>file://env_machine/Inspection_Metal_Detector/meshes/model.dae</uri>
               <scale>1.2 1.2 1.2</scale>
             </mesh>
           </geometry>
@@ -11647,7 +11647,7 @@
           <pose frame=''>-1.5 -1.2 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/aircompressor/meshes/model.dae</uri>
+              <uri>file://env_machine/aircompressor/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -11660,7 +11660,7 @@
           <pose frame=''>-1.5 -1.2 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/aircompressor/meshes/model.dae</uri>
+              <uri>file://env_machine/aircompressor/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -11702,7 +11702,7 @@
           <pose frame=''>-3.8 -2.3 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/chemical_tank/meshes/model.dae</uri>
+              <uri>file://env_machine/chemical_tank/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -11715,7 +11715,7 @@
           <pose frame=''>-3.8 -2.3 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/chemical_tank/meshes/model.dae</uri>
+              <uri>file://env_machine/chemical_tank/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -11746,7 +11746,7 @@
           <pose frame=''>-8 -3 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/cnc/meshes/model.dae</uri>
+              <uri>file://env_machine/cnc/meshes/model.dae</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -11759,7 +11759,7 @@
           <pose frame=''>-8 -3 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/cnc/meshes/model.dae</uri>
+              <uri>file://env_machine/cnc/meshes/model.dae</uri>
               <scale>2 2 2</scale>
             </mesh>
           </geometry>
@@ -11790,7 +11790,7 @@
           <pose frame=''>4 -1.5 0.2 0 -0 1.57</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/cnc_hard/meshes/model.dae</uri>
+              <uri>file://env_machine/cnc_hard/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -11803,7 +11803,7 @@
           <pose frame=''>4 -1.5 0.2 0 -0 1.57</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/cnc_hard/meshes/model.dae</uri>
+              <uri>file://env_machine/cnc_hard/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -11834,7 +11834,7 @@
           <pose frame=''>0 -0.8 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/drilling/meshes/model.dae</uri>
+              <uri>file://env_machine/drilling/meshes/model.dae</uri>
               <scale>3 3 3</scale>
             </mesh>
           </geometry>
@@ -11847,7 +11847,7 @@
           <pose frame=''>0 -0.8 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/drilling/meshes/model.dae</uri>
+              <uri>file://env_machine/drilling/meshes/model.dae</uri>
               <scale>3 3 3</scale>
             </mesh>
           </geometry>
@@ -11878,7 +11878,7 @@
           <pose frame=''>-7.5 0.9 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/extrusion/meshes/model.dae</uri>
+              <uri>file://env_machine/extrusion/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -11891,7 +11891,7 @@
           <pose frame=''>-7.5 0.9 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/extrusion/meshes/model.dae</uri>
+              <uri>file://env_machine/extrusion/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -11922,7 +11922,7 @@
           <pose frame=''>-0.5 -2 0.25 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/forklift/meshes/model.dae</uri>
+              <uri>file://env_machine/forklift/meshes/model.dae</uri>
               <scale>10 10 10</scale>
             </mesh>
           </geometry>
@@ -11935,7 +11935,7 @@
           <pose frame=''>-0.5 -2 0.25 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/forklift/meshes/model.dae</uri>
+              <uri>file://env_machine/forklift/meshes/model.dae</uri>
               <scale>10 10 10</scale>
             </mesh>
           </geometry>
@@ -11966,7 +11966,7 @@
           <pose frame=''>-0.3 -0.3 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/freezer/meshes/model.dae</uri>
+              <uri>file://env_machine/freezer/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -11979,7 +11979,7 @@
           <pose frame=''>-0.3 -0.3 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/freezer/meshes/model.dae</uri>
+              <uri>file://env_machine/freezer/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -12010,7 +12010,7 @@
           <pose frame=''>8 -2 0.2 0 -0 1.57</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/hopper/meshes/model.dae</uri>
+              <uri>file://env_machine/hopper/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -12023,7 +12023,7 @@
           <pose frame=''>8 -2 0.2 0 -0 1.57</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/hopper/meshes/model.dae</uri>
+              <uri>file://env_machine/hopper/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -12054,7 +12054,7 @@
           <pose frame=''>2.5 -1 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/inject/meshes/model.dae</uri>
+              <uri>file://env_machine/inject/meshes/model.dae</uri>
               <scale>0.3 0.3 0.3</scale>
             </mesh>
           </geometry>
@@ -12067,7 +12067,7 @@
           <pose frame=''>2.5 -1 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/inject/meshes/model.dae</uri>
+              <uri>file://env_machine/inject/meshes/model.dae</uri>
               <scale>0.3 0.3 0.3</scale>
             </mesh>
           </geometry>
@@ -12098,7 +12098,7 @@
           <pose frame=''>-3 -2 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/lathe/meshes/model.dae</uri>
+              <uri>file://env_machine/lathe/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -12111,7 +12111,7 @@
           <pose frame=''>-3 -2 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/lathe/meshes/model.dae</uri>
+              <uri>file://env_machine/lathe/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -12142,7 +12142,7 @@
           <pose frame=''>-3.8 -2.7 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/milling/meshes/model.dae</uri>
+              <uri>file://env_machine/milling/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -12155,7 +12155,7 @@
           <pose frame=''>-3.8 -2.7 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/milling/meshes/model.dae</uri>
+              <uri>file://env_machine/milling/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -12186,7 +12186,7 @@
           <pose frame=''>-0.5 -1 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/mixer_and_grinder/meshes/model.dae</uri>
+              <uri>file://env_machine/mixer_and_grinder/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -12199,7 +12199,7 @@
           <pose frame=''>-0.5 -1 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/mixer_and_grinder/meshes/model.dae</uri>
+              <uri>file://env_machine/mixer_and_grinder/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -12230,7 +12230,7 @@
           <pose frame=''>0 0 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/offset_press/meshes/model.dae</uri>
+              <uri>file://env_machine/offset_press/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -12243,7 +12243,7 @@
           <pose frame=''>0 0 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/offset_press/meshes/model.dae</uri>
+              <uri>file://env_machine/offset_press/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -12274,7 +12274,7 @@
           <pose frame=''>0 0 0.3 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/plastifier/meshes/model.dae</uri>
+              <uri>file://env_machine/plastifier/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -12287,7 +12287,7 @@
           <pose frame=''>0 0 0.3 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/plastifier/meshes/model.dae</uri>
+              <uri>file://env_machine/plastifier/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -12318,7 +12318,7 @@
           <pose frame=''>-1 -1 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/polishing/meshes/model.dae</uri>
+              <uri>file://env_machine/polishing/meshes/model.dae</uri>
               <scale>3 3 3</scale>
             </mesh>
           </geometry>
@@ -12331,7 +12331,7 @@
           <pose frame=''>-1 -1 0.2 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/polishing/meshes/model.dae</uri>
+              <uri>file://env_machine/polishing/meshes/model.dae</uri>
               <scale>3 3 3</scale>
             </mesh>
           </geometry>
@@ -12362,7 +12362,7 @@
           <pose frame=''>-2.2 -1.5 0.31 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/tablesawcut/meshes/model.dae</uri>
+              <uri>file://env_machine/tablesawcut/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -12375,7 +12375,7 @@
           <pose frame=''>-2.2 -1.5 0.31 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/tablesawcut/meshes/model.dae</uri>
+              <uri>file://env_machine/tablesawcut/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -12406,7 +12406,7 @@
           <pose frame=''>-1 -1 0.43 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/transformer/meshes/model.dae</uri>
+              <uri>file://env_machine/transformer/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -12419,7 +12419,7 @@
           <pose frame=''>-1 -1 0.43 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/transformer/meshes/model.dae</uri>
+              <uri>file://env_machine/transformer/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -12450,7 +12450,7 @@
           <pose frame=''>-1 -1 0.43 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/transformer/meshes/model.dae</uri>
+              <uri>file://env_machine/transformer/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -12463,7 +12463,7 @@
           <pose frame=''>-1 -1 0.43 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/transformer/meshes/model.dae</uri>
+              <uri>file://env_machine/transformer/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -12494,7 +12494,7 @@
           <pose frame=''>2 0 0.2 0 -0 1.57</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/unravel/meshes/model.dae</uri>
+              <uri>file://env_machine/unravel/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -12507,7 +12507,7 @@
           <pose frame=''>2 0 0.2 0 -0 1.57</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/unravel/meshes/model.dae</uri>
+              <uri>file://env_machine/unravel/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -12538,7 +12538,7 @@
           <pose frame=''>-0.5 1 0.48 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/workbench/meshes/model.dae</uri>
+              <uri>file://env_machine/workbench/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -12551,7 +12551,7 @@
           <pose frame=''>-0.5 1 0.48 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://env_machine/workbench/meshes/model.dae</uri>
+              <uri>file://env_machine/workbench/meshes/model.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -12576,4 +12576,3 @@
     </model>
   </world>
 </sdf>
-

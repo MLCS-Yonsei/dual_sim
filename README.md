@@ -5,16 +5,8 @@ Dual_arm simlator (SLAM &amp; Navi)
 ```bash
 cd catkin_ws/src
 git clone https://github.com/MLCS-Yonsei/dual_sim.git
-cd ..
-catkin_make
-```
-
-## Dependent pkg
-```bash
-cd catkin_ws/src
-git clone https://github.com/tu-darmstadt-ros-pkg/hector_gazebo
-cd ..
-catkin_make
+cd dual_sim
+sh setup.sh
 ```
 
 ## Usage
