@@ -18,17 +18,13 @@ Bringup
 roslaunch bringup_dual robot.launch
 ```
 
-Slam
+```
+Slam & Navi
 ```bash
-roslaunch slam_dual slam_gmapping.launch
+roslaunch slam_navi slam_navi.launch
 ```
 
 Map saver
 ```bash
 rosrun map_server map_saver -f /home/seungchul/catkin_ws/src/dual_sim/navigation_dual/maps/map
-```
-
-Navi
-```bash
-roslaunch navigation_dual navigation.launch
 ```
