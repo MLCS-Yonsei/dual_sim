@@ -37,8 +37,25 @@
 		<param name="lasamplestep" value="0.005"/>
 	</node>
 
+	<!-- cmd_publisher -->
+  	<node pkg="slam_navi" type="cmd_publisher.py" name="cmd_publisher"/>
+
 	<!-- Move_base -->
-  	<!-- <include file="$(find navigation_dual)/launch/move_base.launch"/> -->
+  	<node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find slam_navi)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find slam_navi)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find slam_navi)/param/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find slam_navi)/param/global_costmap_params.yaml" command="load" />
+	  <rosparam file="$(find slam_navi)/param/teb_local_planner_params.yaml" command="load" />
+	  
+    <param name="base_global_planner" value="global_planner/GlobalPlanner" />
+		<param name="planner_frequency" value="20.0" />
+		<param name="planner_patience" value="15.0" />
+
+    <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
+		<param name="controller_frequency" value="20.0" />
+		<param name="controller_patience" value="15.0" />
+  </node>
 
 	  <!-- Run RViz node (visualization) -->
   <node pkg="rviz" type="rviz" name="rviz" args="-d $(find slam_dual)/rviz/slam.rviz">

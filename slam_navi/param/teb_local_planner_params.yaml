@@ -6,7 +6,7 @@ TebLocalPlannerROS:
  dt_ref: 0.3                               # Desired temporal resolution of the trajectory (the trajectory is not fixed to dt_ref since the temporal resolution is part of the optimization, but the trajectory will be resized between iterations if dt_ref +-dt_hysteresis is violated.
  dt_hysteresis: 0.1                        # Hysteresis for automatic resizing depending on the current temporal resolution, usually approx. 10% of dt_ref is recommended.
  global_plan_overwrite_orientation: True   # Overwrite orientation of local subgoals provided by the global planner. (since they often provide only a 2D path)
- allow_init_with_backwards_motion: True    # If true, underlying trajectories might be initialized with backwards motions in case the goal is behind the start within the local costmap.
+ allow_init_with_backwards_motion: False    # If true, underlying trajectories might be initialized with backwards motions in case the goal is behind the start within the local costmap.
  max_global_plan_lookahead_dist: 3.0       # Specify the maximum length (cumulative Euclidean distances) of the subset of the global plan taken into account for optimization.
  feasibility_check_no_poses: 5             # Specify up to which pose on the predicted plan the feasibility should be checked each sampling interval.
     
@@ -38,7 +38,7 @@ TebLocalPlannerROS:
  obstacle_poses_affected: 30                 # Each obstacle position is attached to the closest pose on the trajectory in order to keep a distance. 
  costmap_converter_plugin: ""
  costmap_converter_spin_thread: True         # If set to true, the costmap converter invokes its callback queue in a different thread.
- costmap_converter_rate: 5                   # Rate that defines how often the costmap_converter plugin processes the current costmap (the value should not be much higher than the costmap update rate) [in Hz].
+ costmap_converter_rate: 60                  # Rate that defines how often the costmap_converter plugin processes the current costmap (the value should not be much higher than the costmap update rate) [in Hz].
 
  # Optimization
     

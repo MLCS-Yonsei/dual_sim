@@ -41,5 +41,6 @@
 
 #MLCS_sim_dependency pkg#
 sudo apt-get install ros-kinetic-teb-local-planner
+sudo apt-get install ros-kinetic-cartographer*
 git clone https://github.com/MLCS-Yonsei/hector_gazebo_plugins
 cd ~/catkin_ws && catkin_make
