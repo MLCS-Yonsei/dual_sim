@@ -8,7 +8,7 @@
          <uri>model://sun</uri>
       </include>
       <include>
-          <uri>file://test1_origin</uri>
+          <uri>file://test1_origin_4m</uri>
       </include>
       <actor name="animated_box">
         <link name="box_link">
@@ -35,15 +35,15 @@
           <trajectory id="0" type="square">
              <waypoint>
                 <time>0.0</time>
-                <pose>-1.2 3 1 0 0 0</pose>
+                <pose>-1.7 3 1 0 0 0</pose>
              </waypoint>
              <waypoint>
-                <time>12</time>
-                <pose>1.2 3 1 0 0 0</pose>
+                <time>17</time>
+                <pose>1.7 3 1 0 0 0</pose>
              </waypoint>
              <waypoint>
-                <time>24</time>
-                <pose>-1.2 3 1 0 0 0</pose>
+                <time>34</time>
+                <pose>-1.7 3 1 0 0 0</pose>
              </waypoint>
           </trajectory>
         </script>

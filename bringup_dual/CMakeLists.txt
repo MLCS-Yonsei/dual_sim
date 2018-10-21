@@ -35,6 +35,23 @@ catkin_package(
     std_msgs
 )
 
+catkin_package(
+  INCLUDE_DIRS 
+    include
+  LIBRARIES 
+    vehicle_v2_nodelet
+  CATKIN_DEPENDS 
+    rospy 
+    roscpp
+    geometry_msgs 
+    nav_msgs 
+    std_msgs 
+    ecl_exceptions 
+    ecl_sigslots 
+    ecl_streams 
+    ecl_threads
+)
+
 include_directories(
   include
   ${catkin_INCLUDE_DIRS}
@@ -43,4 +60,7 @@ include_directories(
 add_executable(vehicle_controller src/vehicle_controller.cpp)
 target_link_libraries(vehicle_controller ${catkin_LIBRARIES})
 add_dependencies(vehicle_controller vehicle_control_generate_messages_cpp)
+
+add_executable(odometry src/odometry.cpp)
+target_link_libraries(odometry ${catkin_LIBRARIES})
 
