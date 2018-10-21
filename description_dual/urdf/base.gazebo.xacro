@@ -343,7 +343,7 @@
     </gazebo>
 
     <gazebo>
-        <plugin name="dummy_drive" filename="libgazebo_ros_force_based_move.so">
+        <plugin name="dummy_drive" filename="libgazebo_ros_planar_move.so">
             <legacyMode>false</legacyMode>
             <alwaysOn>true</alwaysOn>
             <updateRate>100</updateRate>
