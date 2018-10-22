@@ -29,6 +29,7 @@
 # sudo apt-get install libignition-math3 -y
 # sudo apt-get install libgazebo8 -y
 # sudo apt-get install gazebo8 -y
+# sudo apt-get install ros-kinetic-gazebo8-*
 
 #Alias#
 # echo "alias eb='gedit ~/.bashrc'" >>~/.bashrc
@@ -40,7 +41,14 @@
 # echo "alias fd='sudo find / -name'" >>~/.bashrc
 
 #MLCS_sim_dependency pkg#
+sudo apt-get install ros-kinetic-robot-state-publisher
+sudo apt-get install ros-kinetic-joint-state-publisher
 sudo apt-get install ros-kinetic-teb-local-planner
 sudo apt-get install ros-kinetic-cartographer*
 git clone https://github.com/MLCS-Yonsei/hector_gazebo_plugins
 cd ~/catkin_ws && catkin_make
+source ~/.bashrc && source ~/catkin_ws/devel/setup.bash
+
+#Gazebo mopdel copy
+roscd bringup_dual/models
+sudo cp -r 'test1_origin_4m' 'test2_origin_4m' 'test3_origin_4m' '/usr/share/gazebo-8/models'
