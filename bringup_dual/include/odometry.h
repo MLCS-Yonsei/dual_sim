@@ -1,87 +1,87 @@
-#include <boost/bind.hpp>
-#include <boost/thread.hpp>
-#include <map>
+//#include <boost/bind.hpp>
+//#include <boost/thread.hpp>
+//#include <map>
 
-#include <geometry_msgs/Twist.h>
-#include <nav_msgs/OccupancyGrid.h>
-#include <nav_msgs/Odometry.h>
-#include <ros/advertise_options.h>
-#include <ros/callback_queue.h>
-#include <ros/ros.h>
-#include <tf/transform_broadcaster.h>
-#include <tf/transform_listener.h>
+//#include <geometry_msgs/Twist.h>
+//#include <nav_msgs/OccupancyGrid.h>
+//#include <nav_msgs/Odometry.h>
+//#include <ros/advertise_options.h>
+//#include <ros/callback_queue.h>
+//#include <ros/ros.h>
+//#include <tf/transform_broadcaster.h>
+//#include <tf/transform_listener.h>
 
-namespace odometry {
+//namespace odometry {
 
-  class getOdometry : public ModelPlugin {
+  //class getOdometry : public ModelPlugin {
 
-    public: 
-      getOdometry();
-      ~getOdometry();
-      void Load(physics::ModelPtr parent, sdf::ElementPtr sdf);
+    //public: 
+      //getOdometry();
+      //~getOdometry();
+      //void Load(physics::ModelPtr parent, sdf::ElementPtr sdf);
 
-    protected: 
-      virtual void UpdateChild();
-      virtual void FiniChild();
+    //protected: 
+      //virtual void UpdateChild();
+      //virtual void FiniChild();
 
-    private:
-      void publishOdometry(double step_time);
+    //private:
+      //void publishOdometry(double step_time);
 
-      tf::Transform getTransformForMotion(double linear_vel_x, double linear_vel_y, double angular_vel, double timeSeconds) const;
+      //tf::Transform getTransformForMotion(double linear_vel_x, double linear_vel_y, double angular_vel, double timeSeconds) const;
 
-      physics::ModelPtr parent_;
-      event::ConnectionPtr update_connection_;
+      //physics::ModelPtr parent_;
+      //event::ConnectionPtr update_connection_;
 
-      /// \brief A pointer to the Link, where force is applied
-      physics::LinkPtr link_;
+      ///// \brief A pointer to the Link, where force is applied
+      //physics::LinkPtr link_;
 
-      /// \brief The Link this plugin is attached to, and will exert forces on.
-      private: std::string link_name_;
+      ///// \brief The Link this plugin is attached to, and will exert forces on.
+      //private: std::string link_name_;
 
-      boost::shared_ptr<ros::NodeHandle> rosnode_;
-      ros::Publisher odometry_pub_;
-      ros::Subscriber vel_sub_;
-      boost::shared_ptr<tf::TransformBroadcaster> transform_broadcaster_;
-      nav_msgs::Odometry odom_;
-      std::string tf_prefix_;
+      //boost::shared_ptr<ros::NodeHandle> rosnode_;
+      //ros::Publisher odometry_pub_;
+      //ros::Subscriber vel_sub_;
+      //boost::shared_ptr<tf::TransformBroadcaster> transform_broadcaster_;
+      //nav_msgs::Odometry odom_;
+      //std::string tf_prefix_;
 
-      tf::Transform odom_transform_;
+      //tf::Transform odom_transform_;
 
-      boost::mutex lock;
+      //boost::mutex lock;
 
-      std::string robot_namespace_;
-      std::string command_topic_;
-      std::string odometry_topic_;
-      std::string odometry_frame_;
-      std::string robot_base_frame_;
-      double odometry_rate_;
-      bool publish_odometry_tf_;
+      //std::string robot_namespace_;
+      //std::string command_topic_;
+      //std::string odometry_topic_;
+      //std::string odometry_frame_;
+      //std::string robot_base_frame_;
+      //double odometry_rate_;
+      //bool publish_odometry_tf_;
 
-      // Custom Callback Queue
-      ros::CallbackQueue queue_;
-      boost::thread callback_queue_thread_;
-      void QueueThread();
+      //// Custom Callback Queue
+      //ros::CallbackQueue queue_;
+      //boost::thread callback_queue_thread_;
+      //void QueueThread();
 
-      // command velocity callback
-      void cmdVelCallback(const geometry_msgs::Twist::ConstPtr& cmd_msg);
+      //// command velocity callback
+      //void cmdVelCallback(const geometry_msgs::Twist::ConstPtr& cmd_msg);
 
-      double x_;
-      double y_;
-      double rot_;
-      bool alive_;
-      common::Time last_odom_publish_time_;
-#if (GAZEBO_MAJOR_VERSION >= 8)
-      ignition::math::Pose3d last_odom_pose_;
-#else
-      math::Pose last_odom_pose_;
-#endif
+      //double x_;
+      //double y_;
+      //double rot_;
+      //bool alive_;
+      //common::Time last_odom_publish_time_;
+//#if (GAZEBO_MAJOR_VERSION >= 8)
+      //ignition::math::Pose3d last_odom_pose_;
+//#else
+      //math::Pose last_odom_pose_;
+//#endif
       
-      double torque_yaw_velocity_p_gain_;
-      double force_x_velocity_p_gain_;
-      double force_y_velocity_p_gain_;
+      //double torque_yaw_velocity_p_gain_;
+      //double force_x_velocity_p_gain_;
+      //double force_y_velocity_p_gain_;
 
-  };
+  //};
 
-}
+//}
 
-#endif /* end of include guard: GAZEBO_ROS_PLANAR_MOVE_HH */
+//#endif [> end of include guard: GAZEBO_ROS_PLANAR_MOVE_HH <]
