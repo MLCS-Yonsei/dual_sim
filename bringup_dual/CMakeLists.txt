@@ -16,6 +16,7 @@ find_package(catkin REQUIRED COMPONENTS
     commendMsg.msg
     motorsMsg.msg
     jointstatesMsg.msg
+	realVel.msg
   )
 
 
@@ -61,5 +62,5 @@ add_executable(vehicle_controller src/vehicle_controller.cpp)
 target_link_libraries(vehicle_controller ${catkin_LIBRARIES})
 add_dependencies(vehicle_controller vehicle_control_generate_messages_cpp)
 
-#add_executable(odometry src/odometry.cpp)
-#target_link_libraries(odometry ${catkin_LIBRARIES})
+add_executable(odom_publisher src/odometry.cpp)
+target_link_libraries(odom_publisher ${catkin_LIBRARIES})

@@ -2,10 +2,13 @@
 
 #include "ros/ros.h"
 
+#include <boost/bind.hpp>
+#include <boost/thread.hpp>
+
 #include <geometry_msgs/Twist.h>
 #include <nav_msgs/Odometry.h>
 #include <tf/transform_broadcaster.h>
-#include <tf/transform_listner.h>
+//#include <tf/transform_listner.h>
 
 #include "bringup_dual/commendMsg.h"
 #include "bringup_dual/motorsMsg.h"
@@ -15,14 +18,22 @@
 
 #define PI 3.14159265358979323846
 
-double realVel[4];
+
+//Motor speed in RPM - initialization
+int64_t w0 = 0;
+int64_t w1 = 0;
+int64_t w2 = 0;
+int64_t w3 = 0;
 
 
 
 void measureCallback(const bringup_dual::realVel::ConstPtr& msg)
 {
 
-	realVel[4] = {msg->realVel[0], msg->realVel[1], msg->realVel[2], msg->realVel[3]}
+	w0 = msg->realVel[0];
+	w1 = msg->realVel[1];
+	w2 = msg->realVel[2];
+	w3 = msg->realVel[3];
 
 }
 
@@ -32,17 +43,8 @@ tf::Transform getTransformForMotion(
 	double linear_vel_y,
 	double angular_vel_z,
 	double timeSeconds
-) const
+)
 {
-
-    linear_vel_x =
-		wheel_radius/4.0*(wheel_speed_lf+wheel_speed_rf+wheel_speed_lb+wheel_speed_rb);
-
-    linear_vel_y =
-		wheel_radius/4.0*(-wheel_speed_lf+wheel_speed_rf+wheel_speed_lb-wheel_speed_rb);
-
-    angular_vel_z =
-		wheel_radius/(4.0*l)*(-wheel_speed_lf+wheel_speed_rf-wheel_speed_lb+wheel_speed_rb);
 
 	tf::Transform tmp;
 	tmp.setIdentity();
@@ -50,17 +52,23 @@ tf::Transform getTransformForMotion(
 	if (std::abs(angular_vel_z) < 0.0001){
 		tmp.setOrigin(
 			tf::Vector3(
-				static_cast<double>(u_x*timeSeconds),
 				static_cast<double>(linear_vel_x*timeSeconds),
+				static_cast<double>(linear_vel_y*timeSeconds),
 				0.0
 			)
 		);
 	}else{
-		double angleChange = angular_vel_z*timeSeconds
+		double distChange_x = linear_vel_x * timeSeconds;
+		double distChange_y = linear_vel_y * timeSeconds;
+		double angleChange = angular_vel_z * timeSeconds;
+
+		double arcRadius_x = distChange_x / angleChange;
+		double arcRadius_y = distChange_y / angleChange;
+
 		tmp.setOrigin(
 			tf::Vector3(
-				static_cast<double>(linear_vel_x*timeSeconds),
-				static_cast<double>(linear_vel_x*timeSeconds),
+				std::sin(angleChange) * arcRadius_x + std::cos(angleChange) * arcRadius_y -arcRadius_y,
+				std::sin(angleChange) * arcRadius_y + std::cos(angleChange) * arcRadius_x -arcRadius_x,
 				0.0
 			)
 		);
@@ -76,19 +84,24 @@ int main(int argc, char **argv)
 
 	ros::init(argc, argv, "odom_publisher");
 	ros::NodeHandle nh;
+	
 
-
-	nav_msgs::Odometry odom
-
-	ros::Subscriber measure_sub = nh.subscribe("/measure", 100, measureCallback);
-
-	ros::Publisher odom_pub = nh.advertise<nav_msgs::Odometry>("/odom", 100);
-
+	boost::shared_ptr<ros::NodeHandle> rosnode;
+	rosnode.reset(new ros::NodeHandle());
+	
 	boost::shared_ptr<tf::TransformBroadcaster> transform_broadcaster;
+	transform_broadcaster.reset(new tf::TransformBroadcaster());
 
+	
+	ros::Subscriber measure_sub = nh.subscribe("/measure", 100, measureCallback);
+	ros::Publisher odom_pub = nh.advertise<nav_msgs::Odometry>("/odom", 100);
+	
+	tf::Transform odom_transform;
+	odom_transform.setIdentity();
 
 	ros::Rate loop_rate(50);
 	
+	ros::Time last_odom_publish_time = ros::Time::now();
 
 	//Gear ratio
 	int gear_ratio = 76;
@@ -117,9 +130,15 @@ int main(int argc, char **argv)
 
 	while(ros::ok())
 	{
-		ros::time currentTime = ros::Time::now();
-		std::string odom_frame = tf::resolve(tf_prefix, odometry_frame);
-		std::string base_footprint_frame = tf::resolve(tf_prefix, robot_vase_frame);
+
+		nav_msgs::Odometry odom;
+
+		ros::Time currentTime = ros::Time::now();
+
+		wheel_speed_lf = (double) w0 * rpm_to_radps;
+		wheel_speed_rf = (double) w1 * rpm_to_radps;
+		wheel_speed_lb = (double) w2 * rpm_to_radps;
+		wheel_speed_rb = (double) w3 * rpm_to_radps;
 
 		linear_vel_x =
 			wheel_radius/4.0*(wheel_speed_lf+wheel_speed_rf+wheel_speed_lb+wheel_speed_rb);
@@ -129,6 +148,10 @@ int main(int argc, char **argv)
 
 		angular_vel_z =
 			wheel_radius/(4.0*l)*(-wheel_speed_lf+wheel_speed_rf-wheel_speed_lb+wheel_speed_rb);
+
+		double step_time = 0;
+		step_time = currentTime.toSec() - last_odom_publish_time.toSec();
+		last_odom_publish_time = currentTime;
 		
 		odom_transform =
 			odom_transform*getTransformForMotion(
@@ -140,17 +163,17 @@ int main(int argc, char **argv)
 		odom.twist.twist.linear.x  = linear_vel_x;
 		odom.twist.twist.linear.y  = linear_vel_y;
 
-		odom.header.stamp = current_time;
-		odom.header.frame_id = odom_frame;
-		odom.child_frame_id = base_footprint_frame;
+		odom.header.stamp = currentTime;
+		odom.header.frame_id = "odom";
+		odom.child_frame_id = "base_footprint";
 
 		if (transform_broadcaster.get()){
-			transform_broadcaster_->sendTransform(
+			transform_broadcaster->sendTransform(
 				tf::StampedTransform(
 					odom_transform,
-					current_time,
-					odom_frame,
-					base_footprint_frame
+					currentTime,
+					"odom",
+					"base_footprint"
 				)
 			);
 		}
@@ -179,7 +202,8 @@ int main(int argc, char **argv)
 			odom.twist.covariance[35] = 100.0;
 		}
 
-		odom_pub.publish(odom)
+		odom_pub.publish(odom);
+
 	}
 
 	return 0;

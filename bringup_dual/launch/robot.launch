@@ -46,6 +46,7 @@
   <!-- Controller -->
   <group ns="controller_group">
     <node pkg="bringup_dual" type="vehicle_controller" name="control"/>
+    <node pkg="bringup_dual" type="odom_publisher" name="odometry"/>
   </group>
     
 </launch>
