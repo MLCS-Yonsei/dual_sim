@@ -63,4 +63,3 @@ add_dependencies(vehicle_controller vehicle_control_generate_messages_cpp)
 
 #add_executable(odometry src/odometry.cpp)
 #target_link_libraries(odometry ${catkin_LIBRARIES})
-
