@@ -21,10 +21,6 @@
   <build_depend>src</build_depend>
   <build_depend>worlds</build_depend>
   <build_depend>tf</build_depend>
-  <build_depend>ecl_exceptions</build_depend>
-  <build_depend>ecl_sigslots</build_depend>
-  <build_depend>ecl_streams</build_depend>
-  <build_depend>ecl_threads</build_depend>
 
   <run_depend>geometry_msgs</run_depend>
   <run_depend>nav_msgs</run_depend>
@@ -33,10 +29,6 @@
   <run_depend>launch</run_depend>
   <run_depend>src</run_depend>
   <run_depend>worlds</run_depend>
-  <run_depend>ecl_exceptions</run_depend>
-  <run_depend>ecl_sigslots</run_depend>
-  <run_depend>ecl_streams</run_depend>
-  <run_depend>ecl_threads</run_depend>
   <run_depend>rospy</run_depend>
   
   <export>

@@ -37,8 +37,7 @@ catkin_package(
 )
 
 catkin_package(
-  INCLUDE_DIRS 
-    include
+  INCLUDE_DIRS
   LIBRARIES 
     vehicle_v2_nodelet
   CATKIN_DEPENDS 
@@ -46,15 +45,9 @@ catkin_package(
     roscpp
     geometry_msgs 
     nav_msgs 
-    std_msgs 
-    ecl_exceptions 
-    ecl_sigslots 
-    ecl_streams 
-    ecl_threads
 )
 
 include_directories(
-  include
   ${catkin_INCLUDE_DIRS}
 )
 
@@ -64,3 +57,6 @@ add_dependencies(vehicle_controller vehicle_control_generate_messages_cpp)
 
 add_executable(odom_publisher src/odometry.cpp)
 target_link_libraries(odom_publisher ${catkin_LIBRARIES})
+
+add_executable(tf_broadcaster src/tf_broadcaster.cpp)
+target_link_libraries(tf_broadcaster ${catkin_LIBRARIES})

@@ -44,8 +44,7 @@
 sudo apt-get install ros-kinetic-robot-state-publisher
 sudo apt-get install ros-kinetic-joint-state-publisher
 sudo apt-get install ros-kinetic-teb-local-planner
-sudo apt-get install ros-kinetic-cartographer*
-git clone https://github.com/MLCS-Yonsei/hector_gazebo_plugins
+sudo apt-get install ros-kinetic-map-server
 cd ~/catkin_ws && catkin_make
 source ~/.bashrc && source ~/catkin_ws/devel/setup.bash
 
