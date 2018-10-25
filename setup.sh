@@ -41,10 +41,11 @@
 # echo "alias fd='sudo find / -name'" >>~/.bashrc
 
 #MLCS_sim_dependency pkg#
-sudo apt-get install ros-kinetic-robot-state-publisher
-sudo apt-get install ros-kinetic-joint-state-publisher
-sudo apt-get install ros-kinetic-teb-local-planner
-sudo apt-get install ros-kinetic-map-server
+sudo apt-get install ros-kinetic-gmapping -y
+sudo apt-get install ros-kinetic-robot-state-publisher -y
+sudo apt-get install ros-kinetic-joint-state-publisher -y
+sudo apt-get install ros-kinetic-teb-local-planner -y
+sudo apt-get install ros-kinetic-map-server -y
 cd ~/catkin_ws && catkin_make
 source ~/.bashrc && source ~/catkin_ws/devel/setup.bash
 
