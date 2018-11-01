@@ -8,11 +8,13 @@
 #include <geometry_msgs/Twist.h>
 #include <nav_msgs/Odometry.h>
 #include <tf/transform_broadcaster.h>
+#include <std_msgs/String.h>
+#include <std_msgs/Int32MultiArray.h>
 //#include <tf/transform_listner.h>
 
-#include "bringup_dual/commendMsg.h"
-#include "bringup_dual/motorsMsg.h"
-#include "bringup_dual/realVel.h"
+//#include "bringup_dual/commendMsg.h"
+//#include "bringup_dual/motorsMsg.h"
+//#include "bringup_dual/realVel.h"
 
 
 
@@ -25,18 +27,29 @@ int64_t w1 = 0;
 int64_t w2 = 0;
 int64_t w3 = 0;
 
+double linear_vel_x = 0;
+double linear_vel_y = 0;
+double angular_vel_z = 0;
+
+std_msgs::String reset_ros;
+std_msgs::String reset_local;
 
 
-void measureCallback(const bringup_dual::realVel::ConstPtr& msg)
+void velCallback(const geometry_msgs::Twist::ConstPtr& msg)
 {
 
-	w0 = msg->realVel[0];
-	w1 = msg->realVel[1];
-	w2 = msg->realVel[2];
-	w3 = msg->realVel[3];
+	linear_vel_x  = msg->linear.x;
+	linear_vel_y  = msg->linear.y;
+	angular_vel_z = msg->angular.z;
 
 }
 
+void resetCallback(const std_msgs::String::ConstPtr& msg)
+{
+
+	reset_ros.data = msg->data;
+
+}
 
 tf::Transform getTransformForMotion(
 	double linear_vel_x,
@@ -93,8 +106,10 @@ int main(int argc, char **argv)
 	transform_broadcaster.reset(new tf::TransformBroadcaster());
 
 	
-	ros::Subscriber measure_sub = nh.subscribe("/measure", 100, measureCallback);
+	ros::Subscriber vel_sub = nh.subscribe("/cmd_vel", 100, velCallback);
+	ros::Subscriber reset_sub = nh.subscribe("/gazebo_reset", 100, resetCallback);
 	ros::Publisher odom_pub = nh.advertise<nav_msgs::Odometry>("/odom", 100);
+	ros::Publisher reset_pub = nh.advertise<std_msgs::String>("/gazebo_reset", 100);
 	
 	tf::Transform odom_transform;
 	odom_transform.setIdentity();
@@ -123,10 +138,6 @@ int main(int argc, char **argv)
 	double wheel_speed_lb = 0;
 	double wheel_speed_rb = 0;
 
-	double linear_vel_x = 0;
-	double linear_vel_y = 0;
-	double angular_vel_z = 0;
-
 
 	while(ros::ok())
 	{
@@ -135,27 +146,47 @@ int main(int argc, char **argv)
 
 		ros::Time currentTime = ros::Time::now();
 
-		wheel_speed_lf = (double) w0 * rpm_to_radps;
-		wheel_speed_rf = (double) w1 * rpm_to_radps;
-		wheel_speed_lb = (double) w2 * rpm_to_radps;
-		wheel_speed_rb = (double) w3 * rpm_to_radps;
+		if(reset_ros.data == "True"){
 
-		linear_vel_x =
-			wheel_radius/4.0*(wheel_speed_lf+wheel_speed_rf+wheel_speed_lb+wheel_speed_rb);
+			odom.pose.pose.position.x = 0.0;
+			odom.pose.pose.position.y = 0.0;
+			odom.pose.pose.position.z = 0.1;
+			odom.pose.pose.orientation.w = 0.0;
+			odom.pose.pose.orientation.x = 0.0;
+			odom.pose.pose.orientation.y = 0.0;
+			odom.pose.pose.orientation.z = 0.0;
+			linear_vel_x = 0;
+			linear_vel_y = 0;
+			angular_vel_z = 0;
 
-		linear_vel_y =
-			wheel_radius/4.0*(-wheel_speed_lf+wheel_speed_rf+wheel_speed_lb-wheel_speed_rb);
+			reset_local.data = "False";
+			reset_pub.publish(reset_local);
 
-		angular_vel_z =
-			wheel_radius/(4.0*l)*(-wheel_speed_lf+wheel_speed_rf-wheel_speed_lb+wheel_speed_rb);
+		}else{
 
-		double step_time = 0;
-		step_time = currentTime.toSec() - last_odom_publish_time.toSec();
-		last_odom_publish_time = currentTime;
-		
-		odom_transform =
-			odom_transform*getTransformForMotion(
-				linear_vel_x, linear_vel_y, angular_vel_z, step_time);
+			wheel_speed_lf = (double) w0 * rpm_to_radps;
+			wheel_speed_rf = (double) w1 * rpm_to_radps;
+			wheel_speed_lb = (double) w2 * rpm_to_radps;
+			wheel_speed_rb = (double) w3 * rpm_to_radps;
+
+			linear_vel_x =
+				wheel_radius/4.0*(wheel_speed_lf+wheel_speed_rf+wheel_speed_lb+wheel_speed_rb);
+
+			linear_vel_y =
+				wheel_radius/4.0*(-wheel_speed_lf+wheel_speed_rf+wheel_speed_lb-wheel_speed_rb);
+
+			angular_vel_z =
+				wheel_radius/(4.0*l)*(-wheel_speed_lf+wheel_speed_rf-wheel_speed_lb+wheel_speed_rb);
+
+			double step_time = 0;
+			step_time = currentTime.toSec() - last_odom_publish_time.toSec();
+			last_odom_publish_time = currentTime;
+			
+			odom_transform =
+				odom_transform*getTransformForMotion(
+					linear_vel_x, linear_vel_y, angular_vel_z, step_time);
+
+		}
 
 		tf::poseTFToMsg(odom_transform, odom.pose.pose);
 
