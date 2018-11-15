@@ -3,22 +3,12 @@ project(bringup_dual)
 
 find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
-  message_generation
   nav_msgs
   roscpp
   std_msgs
   nodelet
   tf
 )
-
-  add_message_files(
-    FILES
-    commendMsg.msg
-    motorsMsg.msg
-    jointstatesMsg.msg
-	realVel.msg
-  )
-
 
   generate_messages(
     DEPENDENCIES
@@ -37,8 +27,6 @@ catkin_package(
 )
 
 catkin_package(
-  INCLUDE_DIRS 
-    include
   LIBRARIES 
     vehicle_v2_nodelet
   CATKIN_DEPENDS 
@@ -46,21 +34,9 @@ catkin_package(
     roscpp
     geometry_msgs 
     nav_msgs 
-    std_msgs 
-    ecl_exceptions 
-    ecl_sigslots 
-    ecl_streams 
-    ecl_threads
 )
 
 include_directories(
   include
   ${catkin_INCLUDE_DIRS}
 )
-
-add_executable(vehicle_controller src/vehicle_controller.cpp)
-target_link_libraries(vehicle_controller ${catkin_LIBRARIES})
-add_dependencies(vehicle_controller vehicle_control_generate_messages_cpp)
-
-add_executable(odom_publisher src/odometry.cpp)
-target_link_libraries(odom_publisher ${catkin_LIBRARIES})

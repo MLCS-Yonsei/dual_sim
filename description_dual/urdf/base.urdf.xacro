@@ -9,30 +9,14 @@
     <xacro:include filename="$(find description_dual)/urdf/base.gazebo.xacro"/>
     <xacro:include filename="$(find description_dual)/urdf/materials.urdf.xacro"/>
     
-    <!-- Base footprint -->
-    <link name="base_footprint">
-        <inertial>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <mass value="0.1" />
-            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="0.0" />
-        </inertial>
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <box size="0.001 0.001 0.001"/>
-            </geometry>
-            <material name="material_red"/>
-        </visual>
-        <collision>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <box size="0.001 0.001 0.001"/>
-            </geometry>
-        </collision>
-    </link>
-    <joint name="base_joint" type="fixed">
-        <parent link="base_footprint"/>
-        <child link="base_link"/>
+    <!-- Odom -->
+    <link name="odom"/>        
+    
+     <!-- Base footprint -->
+    <link name="base_footprint"/>
+    <joint name="odom_joint" type="fixed">
+        <parent link="odom"/>
+        <child link="base_footprint"/>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
     </joint>
 
@@ -57,6 +41,11 @@
             </geometry>
         </collision>
     </link>
+    <joint name="base_joint" type="fixed">
+        <parent link="base_footprint"/>
+        <child link="base_link"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    </joint>
 
     <!-- Back right wheel -->
     <link name="br_wheel_link">

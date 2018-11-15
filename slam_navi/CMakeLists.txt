@@ -1,30 +1,24 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(slam_navi)
 
-find_package(catkin REQUIRED)
-
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  sensor_msgs
+)
 catkin_package(
   CATKIN_DEPENDS
-    gmapping
+  roscpp
+  sensor_msgs  
 )
 
-### TESTS
-if(CATKIN_ENABLE_TESTING)
-  find_package(roslaunch REQUIRED)
+### BUild
 
-  roslaunch_add_file_check(launch)
-endif()
-
-### INSTALLS
-install(DIRECTORY launch
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
+include_directories(
+  include
+  ${catkin_INCLUDE_DIRS}
 )
 
-install(DIRECTORY param
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/param
-)
-
-install(PROGRAMS
-    mockup/move_base_node_mockup
-    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+### Install
+install(DIRECTORY launch param include
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
