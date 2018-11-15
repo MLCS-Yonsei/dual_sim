@@ -38,11 +38,11 @@
                 <pose>-1.7 3 1 0 0 0</pose>
              </waypoint>
              <waypoint>
-                <time>17</time>
+                <time>8.5</time>
                 <pose>1.7 3 1 0 0 0</pose>
              </waypoint>
              <waypoint>
-                <time>34</time>
+                <time>17</time>
                 <pose>-1.7 3 1 0 0 0</pose>
              </waypoint>
           </trajectory>
