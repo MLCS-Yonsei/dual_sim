@@ -5,6 +5,9 @@
   <!-- Map server -->
   <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
 
+  <!-- cmd_publisher -->
+  <node pkg="slam_navi" type="cmd_publisher.py" name="cmd_publisher"/>
+
   <!-- Move_base-->
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
     <rosparam file="$(find slam_navi)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
