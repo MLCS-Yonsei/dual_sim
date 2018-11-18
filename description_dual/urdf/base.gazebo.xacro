@@ -87,7 +87,7 @@
         <material>Gazebo/FlatBlack</material>
         <sensor type="gpu_ray" name="lds_lfcd_sensor">
         <pose>0 0 0 0 0 0</pose>
-        <visualize>true</visualize>
+        <visualize>false</visualize>
         <update_rate>50</update_rate>
         <ray>
             <scan>
@@ -121,7 +121,7 @@
         <material>Gazebo/FlatBlack</material>
         <sensor type="ray" name="sonar_front_sensor">
         <pose>0 0 0 0 0 0</pose>
-        <visualize>true</visualize>
+        <visualize>false</visualize>
         <update_rate>50</update_rate>
         <ray>
           <scan>
@@ -158,7 +158,7 @@
         <material>Gazebo/FlatBlack</material>
         <sensor type="ray" name="sonar_rear_sensor">
         <pose>0 0 0 0 0 0</pose>
-        <visualize>true</visualize>
+        <visualize>false</visualize>
         <update_rate>50</update_rate>
         <ray>
           <scan>
@@ -195,7 +195,7 @@
         <material>Gazebo/FlatBlack</material>
         <sensor type="ray" name="sonar_left_sensor">
         <pose>0 0 0 0 0 0</pose>
-        <visualize>true</visualize>
+        <visualize>false</visualize>
         <update_rate>50</update_rate>
         <ray>
           <scan>
@@ -232,7 +232,7 @@
         <material>Gazebo/FlatBlack</material>
         <sensor type="ray" name="sonar_right_sensor">
         <pose>0 0 0 0 0 0</pose>
-        <visualize>true</visualize>
+        <visualize>false</visualize>
         <update_rate>50</update_rate>
         <ray>
           <scan>
