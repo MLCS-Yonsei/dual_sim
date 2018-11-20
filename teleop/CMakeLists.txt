@@ -40,7 +40,7 @@ catkin_package(
 # Install
 ################################################################################
 catkin_install_python(PROGRAMS
-  nodes/dualarm_mobile_teleop_key
+  nodes/teleop_key
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
