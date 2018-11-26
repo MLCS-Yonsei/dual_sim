@@ -42,11 +42,11 @@
 
   <!-- Move_base-->
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
-    <rosparam file="$(find slam_navi)/param/costmap_common_params_st.yaml" command="load" ns="global_costmap" />
-    <rosparam file="$(find slam_navi)/param/costmap_common_params_st.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find slam_navi)/param/costmap_common_params_dy.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find slam_navi)/param/costmap_common_params_dy.yaml" command="load" ns="local_costmap" />
     <rosparam file="$(find slam_navi)/param/local_costmap_params.yaml" command="load" />
     <rosparam file="$(find slam_navi)/param/global_costmap_params.yaml" command="load" />
-	  <rosparam file="$(find slam_navi)/param/teb_local_planner_params_st.yaml" command="load" />
+	  <rosparam file="$(find slam_navi)/param/teb_local_planner_params_dy.yaml" command="load" />
 	  
     <param name="base_global_planner" value="global_planner/GlobalPlanner" />
 		<param name="planner_frequency" value="20.0" />
@@ -55,19 +55,9 @@
     <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
 		<param name="controller_frequency" value="20.0" />
 		<param name="controller_patience" value="15.0" />
+  </node>
 
-		<param name="global_costmap/global_frame" value="/map"/>
-    <param name="global_costmap/robot_base_frame" value="/base_link"/>
-    <param name="global_costmap/laser_scan_sensor/sensor_frame" value="/base_scan"/>
-    <param name="global_costmap/laser_scan_sensor/topic" value="/scan"/>    
-    <param name="local_costmap/global_frame" value="/odom"/>
-    <param name="local_costmap/robot_base_frame" value="/base_link"/>
-    <param name="local_costmap/laser_scan_sensor/sensor_frame" value="/base_scan"/>
-    <param name="local_costmap/laser_scan_sensor/topic" value="/scan"/>
-    <param name="local_costmap/obstacle_layer/laser_scan_sensor/topic" value="/scan"/>
-  </node>>
-
-  <!-- Run RViz node (visualization) -->
+<!-- Run RViz node (visualization) -->
   <node pkg="rviz" type="rviz" name="rviz" args="-d $(find slam_navi)/rviz/slam_navi.rviz">
   </node>
   
