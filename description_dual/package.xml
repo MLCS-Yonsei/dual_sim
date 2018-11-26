@@ -4,7 +4,7 @@
   <version>0.0.1</version>
   <description>Robot descriptions in form of URDF files and meshes</description>
 
-  <license>GPLv3</license>
+  <license>MLCS</license>
 
   <author email="seungchul0406@gmail.com">Seungchul Ha</author>
 

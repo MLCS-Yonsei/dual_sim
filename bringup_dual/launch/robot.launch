@@ -5,9 +5,9 @@
   <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>
   <arg name="gui" default="true"/>
-  <arg name="world_name" default="$(find bringup_dual)/worlds/test2.world"/>
-  <arg name="init_pos_x" default="1.0"/>
-  <arg name="init_pos_y" default="8.0"/>
+  <arg name="world_name" default="$(find bringup_dual)/worlds/test1_4m.world"/>
+  <arg name="init_pos_x" default="0.0"/>
+  <arg name="init_pos_y" default="0.0"/>
   <arg name="init_pos_z" default="0.2"/>
   
   <!-- Gazebo world -->

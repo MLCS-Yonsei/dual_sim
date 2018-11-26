@@ -2,41 +2,32 @@ cmake_minimum_required(VERSION 2.8.3)
 project(bringup_dual)
 
 find_package(catkin REQUIRED COMPONENTS
-  geometry_msgs
-  nav_msgs
   roscpp
   std_msgs
-  nodelet
+  sensor_msgs
+  geometry_msgs
+  nav_msgs
   tf
+  gazebo_ros
 )
 
-  generate_messages(
-    DEPENDENCIES
-     std_msgs
-  )
-
+find_package(gazebo REQUIRED)
 
 catkin_package(
-  LIBRARIES 
-    bringup_dual
   CATKIN_DEPENDS 
-    geometry_msgs 
-    nav_msgs 
-    roscpp 
-    std_msgs
-)
-
-catkin_package(
-  LIBRARIES 
-    vehicle_v2_nodelet
-  CATKIN_DEPENDS 
-    rospy 
     roscpp
-    geometry_msgs 
-    nav_msgs 
+    std_msgs
+    sensor_msgs
+    geometry_msgs
+    nav_msgs
+    tf
+    gazebo_ros
 )
 
 include_directories(
-  include
   ${catkin_INCLUDE_DIRS}
+)
+
+install(DIRECTORY launch models worlds 
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )

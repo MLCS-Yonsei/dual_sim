@@ -8,7 +8,7 @@
          <uri>model://sun</uri>
       </include>
       <include>
-          <uri>file://test2_origin_4m</uri>
+          <uri>model://test2_4m</uri>
       </include>
       <actor name="animated_box">
         <link name="box_link">

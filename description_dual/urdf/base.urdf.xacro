@@ -9,17 +9,9 @@
     <xacro:include filename="$(find description_dual)/urdf/base.gazebo.xacro"/>
     <xacro:include filename="$(find description_dual)/urdf/materials.urdf.xacro"/>
     
-    <!-- Odom -->
-    <link name="odom"/>        
-    
-     <!-- Base footprint -->
+    <!-- Base footprint -->
     <link name="base_footprint"/>
-    <joint name="odom_joint" type="fixed">
-        <parent link="odom"/>
-        <child link="base_footprint"/>
-        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-    </joint>
-
+    
     <!-- Base link -->
     <link name="base_link">
         <inertial>
