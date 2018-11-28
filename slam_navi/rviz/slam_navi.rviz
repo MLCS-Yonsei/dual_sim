@@ -505,18 +505,10 @@ Visualization Manager:
       Value: true
     - Class: rviz/Marker
       Enabled: true
-      Marker Topic: /frontiers
+      Marker Topic: /RRT_goal
       Name: Marker
       Namespaces:
-        markers4: true
-      Queue Size: 100
-      Value: true
-    - Class: rviz/Marker
-      Enabled: true
-      Marker Topic: /centroids
-      Name: Marker
-      Namespaces:
-        markers5: true
+        {}
       Queue Size: 100
       Value: true
   Enabled: true
@@ -542,7 +534,7 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: -1.57579613
+      Angle: -1.57579494
       Class: rviz/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
@@ -552,11 +544,11 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Scale: 106.651573
+      Scale: 49.5294266
       Target Frame: <Fixed Frame>
       Value: TopDownOrtho (rviz)
-      X: 0.207378745
-      Y: 4.14381027
+      X: -0.0351002663
+      Y: 4.10464334
     Saved: ~
 Window Geometry:
   Displays:
