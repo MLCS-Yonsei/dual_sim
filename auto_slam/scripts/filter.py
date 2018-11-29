@@ -15,6 +15,7 @@ from auto_slam .msg import PointArray
 
 # Subscribers' callbacks------------------------------
 mapData=OccupancyGrid()
+costmapData=OccupancyGrid()
 frontiers=[]
 def callBack(data,args):
 	global frontiers
@@ -30,13 +31,18 @@ def mapCallBack(data):
     global mapData
     mapData=data
 
+def costmapCallBack(data):
+    global costmapData
+    costmapData=data
+
 # Node----------------------------------------------
 def node():
-	global frontiers,mapData
+	global frontiers,mapData,costmapData
 	rospy.init_node('filter', anonymous=False)
 	
 	# fetching all parameters
 	map_topic= rospy.get_param('~map_topic','/map')
+	costmap_topic= rospy.get_param('~costmap_topic','/move_base/global_costmap/costmap')
 	threshold= rospy.get_param('~costmap_clearing_threshold',70)
 	info_radius= rospy.get_param('~info_radius',1.0)					#this can be smaller than the laser scanner range, >> smaller >>less computation time>> too small is not good, info gain won't be accurate
 	goals_topic= rospy.get_param('~goals_topic','/detected_points')
@@ -44,23 +50,27 @@ def node():
 	rate = rospy.Rate(rateHz)
 #---------------------------------------------------
 	rospy.Subscriber(map_topic, OccupancyGrid, mapCallBack)
-	rospy.Subscriber('/move_base/global_costmap/costmap', OccupancyGrid, mapCallBack)
+	rospy.Subscriber(costmap_topic, OccupancyGrid, costmapCallBack)
 #---------------------------------------------------------------------------------------------------------------
 	pub = rospy.Publisher('frontiers', Marker, queue_size=10)
 	pub2 = rospy.Publisher('centroids', Marker, queue_size=10)
 	pub3 = rospy.Publisher('filtered_points', PointArray, queue_size=10)
 #---------------------------------------------------------------------------------------------------------------
 
-	
 		
 #wait if map is not received yet
 	while (len(mapData.data)<1):
 		pass
+
+	while (len(costmapData.data)<1):
+ 		pass
+
 #wait if any of robots' global costmap map is not received yet
-	global_frame=rospy.get_param('~global_frame','/map')
+	global_frame="/"+mapData.header.frame_id
+
 	tfLisn=tf.TransformListener()
-	tfLisn.waitForTransform(global_frame, '/base_link', rospy.Time(0),rospy.Duration(10.0))
-	rospy.Subscriber(goals_topic, PointStamped, callback=callBack,callback_args=[tfLisn,global_frame]) 
+	tfLisn.waitForTransform(global_frame[1:], '/base_link', rospy.Time(0),rospy.Duration(10.0))
+	rospy.Subscriber(goals_topic, PointStamped, callback=callBack,callback_args=[tfLisn,global_frame[1:]]) 
 
 	rospy.loginfo("the map and global costmaps are received")
 	
@@ -159,9 +169,9 @@ def node():
 			temppoint.point.x=centroids[z][0]
 			temppoint.point.y=centroids[z][1]
 						
-			transformedPoint=tfLisn.transformPoint(mapData.header.frame_id,temppoint)
+			transformedPoint=tfLisn.transformPoint(costmapData.header.frame_id,temppoint)
 			x=array([transformedPoint.point.x,transformedPoint.point.y])
-			cond=(gridValue(mapData,x)>threshold) or cond
+			cond=(gridValue(costmapData,x)>threshold) or cond
 
 			if (cond or (informationGain(mapData,[centroids[z][0],centroids[z][1]],info_radius*0.5))<0.2):
 				centroids=delete(centroids, (z), axis=0)

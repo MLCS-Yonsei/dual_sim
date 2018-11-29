@@ -362,7 +362,7 @@
             <covariance_yaw>0.010000</covariance_yaw>
             <broadcastTF>100</broadcastTF>
             <torque>5</torque>
-            <commandTopic>cmd_vel</commandTopic>
+            <commandTopic>cmd_vel_real</commandTopic>
             <odometryTopic>odom</odometryTopic>
             <odometryFrame>odom</odometryFrame>
             <odometryRate>100.0</odometryRate>

@@ -76,13 +76,12 @@ def node():
 # wait if map is not received yet
 	while (len(mapData.data)<1):
 		pass
-	
 	robots = robot()
 #-------------------------------------------------------------------------
 #---------------------     Main   Loop     -------------------------------
 #-------------------------------------------------------------------------
 	while not rospy.is_shutdown():
-		centroids=copy(frontiers)	
+		centroids=copy(frontiers)
 #-------------------------------------------------------------------------			
 #Get information gain for each frontier point
 		infoGain=[]
@@ -95,7 +94,7 @@ def node():
 		ir=[]
 		
 		for ip in range(0,len(centroids)):
-			cost=norm(robots.getPosition()-centroids[ip])		
+			cost=norm(robots.getPosition()-centroids[ip])	
 			information_gain=infoGain[ip]
 			if (norm(robots.getPosition()-centroids[ip])<=hysteresis_radius):
 				information_gain*=hysteresis_gain

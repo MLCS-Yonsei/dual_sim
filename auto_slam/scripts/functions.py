@@ -17,7 +17,7 @@ class robot:
 		self.assigned_point=[]
 		self.global_frame=rospy.get_param('~global_frame','/map')
 		self.listener=tf.TransformListener()
-		self.listener.waitForTransform(self.global_frame, '/base_link', rospy.Time.now(),rospy.Duration(10.0))
+		self.listener.waitForTransform(self.global_frame, '/base_link', rospy.Time(0), rospy.Duration(10.0))
 		cond=0
 		while cond==0:	
 			try:
@@ -29,12 +29,10 @@ class robot:
 		self.assigned_point=self.position
 		self.client=actionlib.SimpleActionClient('/move_base', MoveBaseAction)
 		self.client.wait_for_server()
-		
 		robot.goal.target_pose.header.frame_id=self.global_frame
 		robot.goal.target_pose.header.stamp=rospy.Time.now()
-		
-		rospy.wait_for_service('/move_base_node/NavfnROS/make_plan')
-		self.make_plan = rospy.ServiceProxy('/move_base_node/NavfnROS/make_plan', GetPlan)
+		rospy.wait_for_service('/move_base/make_plan')
+		self.make_plan = rospy.ServiceProxy('/move_base/make_plan', GetPlan)
 
 		robot.start.header.frame_id=self.global_frame
 	

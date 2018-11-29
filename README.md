@@ -33,13 +33,11 @@ Bringup
 roslaunch bringup_dual robot.launch
 ```
 
-```
 Slam (static environment)
 ```bash
 roslaunch slam_navi slam_st.launch
 ```
 
-```
 Navi (static environment)
 ```bash
 roslaunch slam_navi navi_st.launch
@@ -50,7 +48,6 @@ Slam (dynamic environment)
 roslaunch slam_navi slam_dy.launch
 ```
 
-```
 Navi (dynamic environment)
 ```bash
 roslaunch slam_navi navi_dy.launch
@@ -59,6 +56,11 @@ roslaunch slam_navi navi_dy.launch
 Teleop
 ```bash
 roslaunch teleop teleop_key.launch
+```
+
+Auto slam
+```bash
+roslaunch slam_navi auto_slam.launch
 ```
 
 Map saver
