@@ -1,0 +1,11 @@
+# Build and Release Folders
+
+
+# Other files and folders
+.vscode/
+
+# Executables
+*.pyc
+
+# Binaries
+*.npy
