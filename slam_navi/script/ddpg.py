@@ -88,7 +88,7 @@ def node():
 	vel=Twist()
 	prev_action = [0.0, 0.0]
 	scanbuffer = None
-	goal_a = [0, -2]
+	goal_a = [0, 7]
 	while not rospy.is_shutdown():
 		listener.waitForTransform('/map', '/base_link', rospy.Time(0), rospy.Duration(10.0))
 		cond=0
@@ -129,7 +129,7 @@ def node():
 			action = agent.evaluate_actor(state).reshape([-1])
 			print('if 1 Current Decision:',action)
 			vel.linear.x = -0.4*action[0]
-			vel.linear.y = -0.4*action[1]
+			vel.linear.y = 0.4*action[1]
 			vel.linear.z = 0
 			vel.angular.x = 0
 			vel.angular.y = 0

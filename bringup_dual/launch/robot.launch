@@ -5,10 +5,13 @@
   <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>
   <arg name="gui" default="true"/>
-  <arg name="world_name" default="$(find bringup_dual)/worlds/test.world"/>
+  <arg name="world_name" default="$(find bringup_dual)/worlds/test1_4m.world"/>
   <arg name="init_pos_x" default="0.0"/>
   <arg name="init_pos_y" default="0.0"/>
-  <arg name="init_pos_z" default="0.0"/>
+  <arg name="init_pos_z" default="0.2"/>
+  <arg name="init_roll" default="0"/>
+  <arg name="init_pitch" default="0"/>
+  <arg name="init_yaw" default="1.57"/>
   
   <!-- Gazebo world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -27,6 +30,9 @@
           -x $(arg init_pos_x)
           -y $(arg init_pos_y)
           -z $(arg init_pos_z)
+          -R $(arg init_roll) 
+          -P $(arg init_pitch) 
+          -Y $(arg init_yaw)
           -model vehicle_v2">
   </node>
 
