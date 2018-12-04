@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/myounghoe/sanjabu/examconv1d/weights/critic/model.ckpt"
+all_model_checkpoint_paths: "/home/myounghoe/sanjabu/examconv1d/weights/critic/model.ckpt"
