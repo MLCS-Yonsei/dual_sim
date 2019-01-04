@@ -1,5 +1,5 @@
 # Dual_sim
-Dual_arm simlator (SLAM &amp; Navi)
+Gazebo simlator for mecanum wheeled mobile platform
 
 ## Installation
 Dependency
