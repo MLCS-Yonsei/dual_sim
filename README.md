@@ -1,5 +1,5 @@
 # Dual_sim
-Gazebo simlator for mecanum wheeled mobile platform
+ROS gazebo simlator for mecanum wheeled mobile platform
 
 ## Installation
 Dependency
