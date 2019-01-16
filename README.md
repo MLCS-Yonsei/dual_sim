@@ -1,28 +1,23 @@
 # Dual_sim
 ROS gazebo simlator for mecanum wheeled mobile platform
 
-## Installation
-Dependency
+## Dependency
 ```bash
 sudo apt-get install ros-kinetic-robot-gmapping
 sudo apt-get install ros-kinetic-robot-amcl
 sudo apt-get install ros-kinetic-robot-state-publisher
 sudo apt-get install ros-kinetic-joint-state-publisher
-sudo apt-get install ros-kinetic-teb-local-planner
 ```
-Installation
+Dependency repository:
+https://github.com/MLCS-Yonsei/teb_local_planner.git
+
+## Installation
 ```bash
 cd catkin_ws/src
 git clone https://github.com/MLCS-Yonsei/dual_sim.git
 cd ..
 catkin_make
 source ~/.bashrc && source ~/catkin_ws/devel/setup.bash
-```
-Gazebo model import
-```bash
-Gazebo mopdel copy
-roscd bringup_dual/models
-sudo cp -r 'test1_origin_4m' 'test2_origin_4m' 'test3_origin_4m' '/usr/share/gazebo-8/models'
 ```
 
 ## Usage
@@ -33,24 +28,14 @@ Bringup
 roslaunch bringup_dual robot.launch
 ```
 
-Slam (static environment)
+Slam
 ```bash
-roslaunch slam_navi slam_st.launch
+roslaunch slam_navi slam.launch
 ```
 
-Navi (static environment)
+Navi
 ```bash
-roslaunch slam_navi navi_st.launch
-```
-
-Slam (dynamic environment)
-```bash
-roslaunch slam_navi slam_dy.launch
-```
-
-Navi (dynamic environment)
-```bash
-roslaunch slam_navi navi_dy.launch
+roslaunch slam_navi navi.launch
 ```
 
 Teleop
