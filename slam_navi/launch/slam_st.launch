@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <launch>
 <!-- cmd_publisher -->
-  <!-- <node pkg="slam_navi" type="cmd_publisher.py" name="cmd_publisher"/> -->
-	<node pkg="slam_navi" type="ddpg.py" name="ddpg"  output="screen"/>
+  <node pkg="slam_navi" type="cmd_publisher.py" name="cmd_publisher"/>
+	<!-- <node pkg="slam_navi" type="ddpg.py" name="ddpg"  output="screen"/> -->
 
 <!-- G-mapping -->
   <node pkg="gmapping" type="slam_gmapping" name="dual_gmapping">
@@ -56,7 +56,7 @@
     <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
 		<param name="controller_frequency" value="20.0" />
 		<param name="controller_patience" value="15.0" />
-		<remap from="cmd_vel" to="cmd_vel_fake"/>
+		<!-- <remap from="cmd_vel" to="cmd_vel_fake"/> -->
   </node>
 
 <!-- Run RViz node (visualization) -->

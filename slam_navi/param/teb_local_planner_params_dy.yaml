@@ -16,10 +16,11 @@ TebLocalPlannerROS:
  max_vel_x_backwards: 0.35   # Maximum absolute translational velocity of the robot while driving backwards in meters/sec
  max_vel_y: 0.35             # Maximum strafing velocity of the robot (should be zero for non-holonomic robots!)
  max_vel_theta: 0.35         # Maximum angular velocity of the robot in radians/sec
- acc_lim_x: 0.5             # Maximum translational acceleration of the robot in meters/sec^2
- acc_lim_y: 0.5             # Maximum strafing acceleration of the robot
- acc_lim_theta: 0.5         # Maximum angular acceleration of the robot in radians/sec^2
- min_turning_radius: 0.0    # omni-drive robot (can turn on place!)
+ max_vel_l1: 0.35            # Maximum l1 norm of translational velocity of the robot in radians/sec
+ acc_lim_x: 0.5              # Maximum translational acceleration of the robot in meters/sec^2
+ acc_lim_y: 0.5              # Maximum strafing acceleration of the robot
+ acc_lim_theta: 0.5          # Maximum angular acceleration of the robot in radians/sec^2
+ min_turning_radius: 0.0     # omni-drive robot (can turn on place!)
 
  footprint_model:
    type: "point"
@@ -50,6 +51,7 @@ TebLocalPlannerROS:
  weight_max_vel_x: 2                   # Optimization weight for satisfying the maximum allowed translational velocity.
  weight_max_vel_y: 2
  weight_max_vel_theta: 1               # Optimization weight for satisfying the maximum allowed angular velocity.
+ weight_max_vel_l1: 2                  # Optimization weight for satisfying the maximum l1 norm of translational velocity.
  weight_acc_lim_x: 1                   # Optimization weight for satisfying the maximum allowed translational acceleration.
  weight_acc_lim_y: 1
  weight_acc_lim_theta: 1               # Optimization weight for satisfying the maximum allowed angular acceleration.
