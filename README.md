@@ -3,8 +3,8 @@ ROS gazebo simlator for mecanum wheeled mobile platform
 
 ## Dependency
 ```bash
-sudo apt-get install ros-kinetic-robot-gmapping
-sudo apt-get install ros-kinetic-robot-amcl
+sudo apt-get install ros-kinetic-slam-gmapping
+sudo apt-get install ros-kinetic-amcl
 sudo apt-get install ros-kinetic-robot-state-publisher
 sudo apt-get install ros-kinetic-joint-state-publisher
 ```
